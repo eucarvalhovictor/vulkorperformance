@@ -1678,10 +1678,10 @@ tr:nth-child(even) {
 .testimonials-ref-carousel {
   position: relative;
   width: 100%;
-  max-width: 640px;
-  min-height: 270px;
+  max-width: 1160px;
+  min-height: 290px;
   margin: 0 auto 25px auto;
-  padding: 0 65px;
+  padding: 0 60px;
   box-sizing: border-box;
   display: flex;
   align-items: center;
@@ -1752,8 +1752,8 @@ tr:nth-child(even) {
 .testimonials-ref-stage {
   position: relative;
   width: 100%;
-  max-width: 500px;
-  min-height: 260px;
+  max-width: 1020px;
+  min-height: 280px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1766,19 +1766,28 @@ tr:nth-child(even) {
   top: 50%;
   left: 50%;
   width: 100%;
-  max-width: 480px;
-  min-height: 200px;
+  max-width: 370px;
+  min-height: 210px;
   background-color: #FFFFFF;
   border: 1px solid var(--border-color);
-  padding: 30px 24px 35px 24px;
-  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
+  padding: 30px 24px 36px 24px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.35s ease, filter 0.35s ease;
+  transition: transform 0.45s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.35s ease, filter 0.35s ease, box-shadow 0.3s ease;
   box-sizing: border-box;
+}
+
+.testimonial-ref-card.side-card {
+  cursor: pointer;
+}
+
+.testimonial-ref-card.side-card:hover {
+  opacity: 0.8 !important;
+  filter: blur(1.5px) !important;
 }
 
 .ref-card-content {

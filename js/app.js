@@ -751,6 +751,8 @@ class VulkorApp {
     const cards = document.querySelectorAll('.testimonial-ref-card');
     if (!cards || cards.length === 0) return;
 
+    const isDesktop = window.innerWidth > 768;
+
     cards.forEach((card, idx) => {
       let offset = idx - this.currentTestimonialIndex;
 
@@ -760,6 +762,9 @@ class VulkorApp {
 
       card.style.left = '50%';
       if (offset === 0) {
+        // Active Center Card
+        card.classList.remove('side-card');
+        card.classList.add('active-card');
         card.style.transform = 'translate(-50%, -50%) scale(1)';
         card.style.opacity = '1';
         card.style.visibility = 'visible';
@@ -767,12 +772,36 @@ class VulkorApp {
         card.style.zIndex = '10';
         card.style.pointerEvents = 'auto';
         card.style.cursor = 'default';
-      } else {
+      } else if (isDesktop && (offset === 1 || offset === -1)) {
+        // Desktop Blurred Side Cards
+        card.classList.remove('active-card');
+        card.classList.add('side-card');
+
+        let shift = 380;
+        if (window.innerWidth <= 1024) {
+          shift = 320;
+        }
+
         const dir = offset > 0 ? 1 : -1;
-        card.style.transform = `translate(${dir > 0 ? '120%' : '-220%'}, -50%) scale(0.88)`;
+        const xOffset = dir * shift;
+
+        card.style.transform = `translate(calc(-50% + ${xOffset}px), -50%) scale(0.88)`;
+        card.style.opacity = '0.55';
+        card.style.visibility = 'visible';
+        card.style.filter = 'blur(3px)';
+        card.style.zIndex = '5';
+        card.style.pointerEvents = 'auto';
+        card.style.cursor = 'pointer';
+      } else {
+        // Hidden / Far Cards (or mobile inactive cards)
+        card.classList.remove('active-card', 'side-card');
+        const dir = offset > 0 ? 1 : -1;
+        card.style.transform = isDesktop
+          ? `translate(calc(-50% + ${dir * 540}px), -50%) scale(0.75)`
+          : `translate(${dir > 0 ? '120%' : '-220%'}, -50%) scale(0.88)`;
         card.style.opacity = '0';
         card.style.visibility = 'hidden';
-        card.style.filter = 'none';
+        card.style.filter = 'blur(6px)';
         card.style.zIndex = '1';
         card.style.pointerEvents = 'none';
       }
