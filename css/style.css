@@ -3472,3 +3472,65 @@ html, body {
     line-height: 1.5 !important;
   }
 }
+
+/* ==========================================================================
+   SUBTLE PURE JAVASCRIPT ENTRANCE ANIMATIONS
+   ========================================================================== */
+.reveal-init {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-init.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Lateral reveals for split sections */
+.about-vertical-column.reveal-init {
+  opacity: 0;
+  transform: translateX(-18px);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.about-vertical-column.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.about-main-black-card.reveal-init {
+  opacity: 0;
+  transform: translateX(18px);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.about-main-black-card.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Hero Section Subtle Stagger Sequence on Load */
+.hero-reveal-init {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.hero-reveal-init.hero-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-init,
+  .about-vertical-column.reveal-init,
+  .about-main-black-card.reveal-init,
+  .hero-reveal-init {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}

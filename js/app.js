@@ -22,6 +22,7 @@ class VulkorApp {
     this.renderProducts();
     this.updateCartUI();
     this.initTestimonialsCarousel();
+    this.initScrollAnimations();
 
     // Routing by URL Hash
     this.handleHashChange();
@@ -69,6 +70,7 @@ class VulkorApp {
     }
 
     this.updateNavLinks('home');
+    setTimeout(() => this.initScrollAnimations(), 40);
   }
 
   scrollToSection(sectionId, event) {
@@ -127,6 +129,8 @@ class VulkorApp {
         </div>
       </div>
     `).join('');
+
+    setTimeout(() => this.initScrollAnimations(), 40);
   }
 
   // ==========================================
@@ -262,6 +266,7 @@ class VulkorApp {
       `;
 
       window.scrollTo({ top: 0, behavior: 'smooth' });
+      setTimeout(() => this.initScrollAnimations(), 50);
     }
   }
 
@@ -278,6 +283,7 @@ class VulkorApp {
     }
 
     container.innerHTML = filtered.map(p => this.renderProductItemHTML(p)).join('');
+    setTimeout(() => this.initScrollAnimations(), 40);
   }
 
   filterProducts(category) {
@@ -794,6 +800,84 @@ class VulkorApp {
 
     if (!isActive) {
       item.classList.add('active');
+    }
+  }
+
+  // ==========================================
+  // PURE JAVASCRIPT ENTRANCE & SCROLL ANIMATIONS
+  // ==========================================
+  initScrollAnimations() {
+    if (typeof window === 'undefined') return;
+
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      return;
+    }
+
+    // Hero Section Sequential Entrance
+    const heroElements = document.querySelectorAll(
+      '.hero-logo-wrap, .hero-main-heading, .hero-main-subtext, .hero-cta-buttons-wrap'
+    );
+    if (heroElements.length > 0) {
+      heroElements.forEach((el, idx) => {
+        if (!el.classList.contains('hero-reveal-init')) {
+          el.classList.add('hero-reveal-init');
+          setTimeout(() => {
+            el.classList.add('hero-revealed');
+          }, 80 + (idx * 120));
+        }
+      });
+    }
+
+    // Scroll-triggered Elements
+    const elementsToAnimate = document.querySelectorAll(
+      '.products-combat-title, .category-item-fullimage, .benefits-section-title, .benefit-card, .tactical-marquee-wrapper, .about-vertical-column, .about-main-black-card, .testimonials-ref-title, .testimonials-ref-carousel, .testimonials-dots, .testimonials-ref-cta, .contact-box-title, .contact-form-box, .contact-info-box, .faq-title, .faq-item, .product-item, .details-hero-box, .details-engineering-section, .details-catalog-section, .details-bottom-cta'
+    );
+
+    if (elementsToAnimate.length === 0) return;
+
+    // Apply init class and staggered delay for grid items
+    elementsToAnimate.forEach((el) => {
+      if (!el.classList.contains('reveal-init') && !el.classList.contains('revealed')) {
+        el.classList.add('reveal-init');
+        const parent = el.parentElement;
+        if (parent && (
+          parent.classList.contains('categories-grid') ||
+          parent.classList.contains('benefits-grid') ||
+          parent.classList.contains('products-grid') ||
+          parent.classList.contains('faq-list')
+        )) {
+          const siblingIndex = Array.from(parent.children).indexOf(el);
+          el.style.transitionDelay = `${(siblingIndex % 4) * 0.1}s`;
+        }
+      }
+    });
+
+    if ('IntersectionObserver' in window) {
+      if (!this.scrollObserver) {
+        const observerOptions = {
+          root: null,
+          rootMargin: '0px 0px -40px 0px',
+          threshold: 0.08
+        };
+
+        this.scrollObserver = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('revealed');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, observerOptions);
+      }
+
+      elementsToAnimate.forEach(el => {
+        if (!el.classList.contains('revealed')) {
+          this.scrollObserver.observe(el);
+        }
+      });
+    } else {
+      // Fallback if IntersectionObserver is not available
+      elementsToAnimate.forEach(el => el.classList.add('revealed'));
     }
   }
 }
