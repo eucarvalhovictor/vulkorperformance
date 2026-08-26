@@ -1822,6 +1822,8 @@ tr:nth-child(even) {
 }
 
 .btn-ref-orcamento {
+  position: relative;
+  overflow: hidden;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1838,6 +1840,23 @@ tr:nth-child(even) {
   cursor: pointer;
   border: 1px solid var(--color-primary);
   box-shadow: 0 6px 20px rgba(255, 69, 0, 0.35);
+}
+
+.btn-ref-orcamento .btn-corner-triangle {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 9px;
+  height: 9px;
+  background-color: #FFFFFF;
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+  pointer-events: none;
+  transition: transform 0.2s ease;
+  z-index: 3;
+}
+
+.btn-ref-orcamento:hover .btn-corner-triangle {
+  transform: scale(1.4);
 }
 
 .btn-ref-orcamento:hover {
