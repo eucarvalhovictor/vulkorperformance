@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- Página Inicial / Home -->
+  <url>
+    <loc>https://vulkorperformance.com.br/</loc>
+    <lastmod>2026-08-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://vulkorperformance.com.br/public/logo.png</image:loc>
+      <image:title>Vulkor Performance - Logo Oficial</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://vulkorperformance.com.br/public/kimonos.jpg</image:loc>
+      <image:title>Kimonos de Jiu-Jitsu Vulkor Performance</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://vulkorperformance.com.br/public/camisas.jpg</image:loc>
+      <image:title>Camisas e Rashguards No-Gi Vulkor Performance</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://vulkorperformance.com.br/public/calcas.jpg</image:loc>
+      <image:title>Calças Ripstop Vulkor Performance</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://vulkorperformance.com.br/public/shorts.jpg</image:loc>
+      <image:title>Shorts de Combate Vulkor Performance</image:title>
+    </image:image>
+  </url>
+
+  <!-- Seção de Produtos de Combate -->
+  <url>
+    <loc>https://vulkorperformance.com.br/#categorias</loc>
+    <lastmod>2026-08-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Seção de Benefícios / Diferenciais -->
+  <url>
+    <loc>https://vulkorperformance.com.br/#beneficios</loc>
+    <lastmod>2026-08-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Seção Sobre Nós -->
+  <url>
+    <loc>https://vulkorperformance.com.br/#sobre</loc>
+    <lastmod>2026-08-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Seção Depoimentos de Clientes -->
+  <url>
+    <loc>https://vulkorperformance.com.br/#depoimentos</loc>
+    <lastmod>2026-08-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Seção de Contato & Orçamento -->
+  <url>
+    <loc>https://vulkorperformance.com.br/#contato</loc>
+    <lastmod>2026-08-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Seção FAQ (Perguntas Frequentes) -->
+  <url>
+    <loc>https://vulkorperformance.com.br/#faq</loc>
+    <lastmod>2026-08-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+</urlset>

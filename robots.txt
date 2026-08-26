@@ -1,0 +1,29 @@
+# robots.txt for Vulkor Performance (https://vulkorperformance.com.br)
+User-agent: *
+Allow: /
+Allow: /public/
+Allow: /css/
+Allow: /js/
+Allow: /llms.txt
+Allow: /sitemap.xml
+Allow: /sitemap.xmp
+
+# Crawlers and AI Search Agents (Perplexity, SearchGPT, ClaudeBot, Google-Extended, etc.)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+# Sitemap Location
+Sitemap: https://vulkorperformance.com.br/sitemap.xml
+Sitemap: https://vulkorperformance.com.br/sitemap.xmp
