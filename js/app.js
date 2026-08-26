@@ -158,22 +158,23 @@ class VulkorApp {
           <!-- Back Bar -->
           <div class="back-bar">
             <button class="btn btn-outline btn-sm" onclick="app.showHome(event)">
+              <div class="btn-corner-triangle"></div>
               <i class="fa-solid fa-arrow-left"></i> Voltar para a Página Principal
             </button>
-            <div style="font-size: 12px; text-transform: uppercase; font-weight: 700;">
+            <div class="details-breadcrumb">
               Início / Modalidades / <span style="color: var(--color-black);">${modality.name}</span>
             </div>
           </div>
 
           <!-- Modality Hero Box (Design System) -->
           <div class="details-hero-box">
-            <div>
+            <div class="details-hero-info">
               <span class="badge" style="margin-bottom: 12px;">MOD // ${modality.number} - ${modality.tag}</span>
-              <h1 style="font-size: 30px; margin-bottom: 10px;">${modality.name}</h1>
-              <p style="font-weight: 700; color: var(--color-black); text-transform: uppercase; font-size: 13px; margin-bottom: 15px;">
+              <h1 class="details-main-title">${modality.name}</h1>
+              <p class="details-tagline">
                 ${modality.tagline}
               </p>
-              <p>${modality.description}</p>
+              <p class="details-desc-text">${modality.description}</p>
 
               <!-- Technical Specs Grid -->
               <div class="details-specs-grid">
@@ -198,59 +199,62 @@ class VulkorApp {
           </div>
 
           <!-- Deep-Dive Article & Size Table -->
-          <section>
-            <h2>Engenharia Aplicada ao ${modality.name}</h2>
-            <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; margin-top: 20px;">
-              <div>
+          <section class="details-engineering-section">
+            <h2 class="details-section-heading">Engenharia Aplicada ao ${modality.name}</h2>
+            <div class="details-engineering-grid">
+              <div class="details-article-col">
                 <h3>${modality.article.title}</h3>
                 ${modality.article.paragraphs.map(p => `<p>${p}</p>`).join('')}
 
                 <h3 style="margin-top: 25px;">Diferenciais de Construção:</h3>
-                <ul style="list-style: square; padding-left: 20px; font-size: 13px; color: var(--color-text-secondary); line-height: 1.8;">
+                <ul class="details-diff-list">
                   ${modality.article.bulletPoints.map(bp => `<li><strong>${bp}</strong></li>`).join('')}
                 </ul>
               </div>
 
               <!-- Size Table (Design System Spec) -->
-              <div style="background: var(--color-gray-light); padding: 25px; border: 1px solid var(--border-color);">
+              <div class="details-sizetable-box">
                 <h3>Tabela Oficial de Tamanhos</h3>
                 <p style="font-size: 12px; margin-bottom: 10px;">Consulte as medidas para escolha ideal do vestuário:</p>
 
-                <table>
-                  <thead>
-                    <tr>
-                      <th>Tamanho</th>
-                      <th>Altura / Uso</th>
-                      <th>Peso / Medida</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    ${modality.sizeChart.map(row => `
+                <div class="table-responsive-wrapper">
+                  <table>
+                    <thead>
                       <tr>
-                        <td><strong>${row.size}</strong></td>
-                        <td>${row.height}</td>
-                        <td>${row.weight}</td>
+                        <th>Tamanho</th>
+                        <th>Altura / Uso</th>
+                        <th>Peso / Medida</th>
                       </tr>
-                    `).join('')}
-                  </tbody>
-                </table>
+                    </thead>
+                    <tbody>
+                      ${modality.sizeChart.map(row => `
+                        <tr>
+                          <td><strong>${row.size}</strong></td>
+                          <td>${row.height}</td>
+                          <td>${row.weight}</td>
+                        </tr>
+                      `).join('')}
+                    </tbody>
+                  </table>
+                </div>
               </div>
             </div>
           </section>
 
           <!-- Modality Catalog -->
-          <section>
-            <h2>Coleção de Roupas & Vestuário de ${modality.name}</h2>
-            <p>Peças técnicas fabricadas pela Vulkor sob o padrão 0-Radius:</p>
+          <section class="details-catalog-section">
+            <h2 class="details-section-heading">Coleção de Roupas & Vestuário de ${modality.name}</h2>
+            <p style="font-size: 13px; color: var(--color-text-secondary); margin-bottom: 20px;">Peças técnicas fabricadas pela Vulkor sob o padrão 0-Radius:</p>
 
-            <div class="products-grid" style="margin-top: 20px;">
+            <div class="products-grid">
               ${modalityProducts.map(p => this.renderProductItemHTML(p)).join('')}
             </div>
           </section>
 
           <!-- Bottom Navigation CTA -->
-          <div style="text-align: center; padding: 40px 0;">
+          <div class="details-bottom-cta">
             <button class="btn btn-primary btn-lg" onclick="app.showHome(event)">
+              <div class="btn-corner-triangle"></div>
               <i class="fa-solid fa-arrow-left"></i> Voltar e Ver Todas as Modalidades
             </button>
           </div>
@@ -312,9 +316,11 @@ class VulkorApp {
             
             <div class="product-actions">
               <button class="btn btn-outline btn-sm" onclick="app.openProductModal('${product.id}')">
+                <div class="btn-corner-triangle"></div>
                 Detalhes
               </button>
               <button class="btn btn-primary btn-sm" onclick="app.addToCart('${product.id}')">
+                <div class="btn-corner-triangle"></div>
                 Comprar
               </button>
             </div>
@@ -335,45 +341,50 @@ class VulkorApp {
     const modal = document.getElementById('productModal');
 
     modalBody.innerHTML = `
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: start;">
-        <div style="background: #000; height: 320px; border: 1px solid var(--border-color);">
-          <img src="${product.image}" alt="${product.name}" style="width: 100%; height: 100%; object-fit: cover;">
+      <div class="modal-product-layout">
+        <div class="modal-product-img-box">
+          <img src="${product.image}" alt="${product.name}">
         </div>
 
-        <div>
+        <div class="modal-product-details">
           <span class="badge">${product.modalityLabel}</span>
           <span class="badge badge-outline">${product.badge}</span>
           
-          <h2 style="font-size: 20px; margin: 10px 0 5px 0;">${product.name}</h2>
+          <h2 class="modal-product-title">${product.name}</h2>
           
-          <div style="margin: 15px 0;">
-            <div style="font-size: 22px; font-weight: 700; color: var(--color-black);">
+          <div class="modal-price-box">
+            <div class="modal-price-val">
               R$ ${product.price.toFixed(2).replace('.', ',')}
             </div>
-            <small>${product.installments} | 5% OFF à vista no PIX</small>
+            <small class="modal-price-sub">${product.installments} | 5% OFF à vista no PIX</small>
           </div>
 
-          <p style="font-size: 13px; margin-bottom: 15px;">${product.description}</p>
+          <p class="modal-product-desc">${product.description}</p>
 
           <label>Selecione o Tamanho:</label>
-          <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 20px;" id="modalSizeGroup">
+          <div class="modal-size-group" id="modalSizeGroup">
             ${product.sizes.map((s, idx) => `
-              <button class="btn btn-outline btn-sm ${idx === 0 ? 'btn-primary' : ''}" onclick="app.selectSize(this)">${s}</button>
+              <button class="btn btn-outline btn-sm ${idx === 0 ? 'btn-primary' : ''}" onclick="app.selectSize(this)">
+                <div class="btn-corner-triangle"></div>
+                ${s}
+              </button>
             `).join('')}
           </div>
 
-          <div style="margin-bottom: 20px; border-top: 1px solid var(--border-color); padding-top: 10px;">
+          <div class="modal-specs-box">
             <label>Especificações:</label>
-            <ul style="list-style: none; font-size: 12px; color: var(--color-text-secondary);">
+            <ul class="modal-specs-list">
               ${product.specs.map(sp => `<li>• ${sp}</li>`).join('')}
             </ul>
           </div>
 
-          <div style="display: flex; gap: 10px;">
+          <div class="modal-actions-row">
             <button class="btn btn-primary btn-block" onclick="app.addToCart('${product.id}'); app.closeProductModalDirect();">
-              Adicionar ao Arsenal
+              <div class="btn-corner-triangle"></div>
+              <i class="fa-solid fa-cart-shopping" style="margin-right: 6px;"></i> Adicionar ao Arsenal
             </button>
             <button class="btn btn-secondary" onclick="app.showModalityDetails('${product.modality}', event); app.closeProductModalDirect();" title="Ver Modalidade">
+              <div class="btn-corner-triangle"></div>
               Modalidade
             </button>
           </div>

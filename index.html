@@ -253,9 +253,11 @@
             </p>
             <div style="display: flex; gap: 12px; flex-wrap: wrap;">
               <a href="#categorias" class="btn btn-primary" onclick="app.scrollToSection('categorias', event)">
+                <div class="btn-corner-triangle"></div>
                 Conhecer Coleções
               </a>
               <a href="#sobre" class="btn btn-hero-outline-white" onclick="app.scrollToSection('sobre', event)">
+                <div class="btn-corner-triangle"></div>
                 Sobre a Vulkor
               </a>
             </div>
@@ -718,7 +720,10 @@
       <div class="cart-drawer-footer">
         <div style="display: flex; gap: 8px; margin-bottom: 15px;">
           <input type="text" id="couponInput" placeholder="CUPOM (VULKOR10)" style="margin: 0; text-transform: uppercase;">
-          <button class="btn btn-secondary btn-sm" onclick="app.applyCoupon()">Aplicar</button>
+          <button class="btn btn-secondary btn-sm" onclick="app.applyCoupon()">
+            <div class="btn-corner-triangle"></div>
+            Aplicar
+          </button>
         </div>
 
         <div style="display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 6px; color: var(--color-text-secondary);">
@@ -742,6 +747,7 @@
         </div>
 
         <button class="btn btn-primary btn-block" onclick="app.checkout()">
+          <div class="btn-corner-triangle"></div>
           Finalizar Pedido
         </button>
       </div>
