@@ -61,6 +61,7 @@ html {
   font-size: 16px;
   background-color: var(--color-bg-page);
   color: var(--color-text);
+  min-height: 100%;
 }
 
 body {
@@ -70,6 +71,8 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  min-height: 100%;
+  min-height: 100dvh;
 }
 
 /* Custom Scrollbar */
@@ -556,16 +559,22 @@ tr:nth-child(even) {
   margin-left: 0;
   margin-right: 0;
   background: url('../public/hero_bg.jpg') center center / cover no-repeat;
-  min-height: 900px;
+  min-height: 100vh;
+  min-height: 100dvh;
+  min-height: -webkit-fill-available;
+  height: 100vh;
+  height: 100dvh;
   display: flex;
   align-items: center;
-  padding: 170px 0 150px 0;
+  justify-content: center;
+  padding: 60px 0;
   margin-top: 0;
   margin-bottom: 60px;
   border: none !important;
   outline: none !important;
   box-shadow: none !important;
   overflow: hidden;
+  box-sizing: border-box;
 }
 
 .hero-overlay {
@@ -2611,8 +2620,12 @@ html, body {
   }
 
   .hero-section {
-    min-height: 760px;
-    padding: 130px 0 110px 0;
+    min-height: 100vh;
+    min-height: 100dvh;
+    min-height: -webkit-fill-available;
+    height: 100vh;
+    height: 100dvh;
+    padding: 40px 0;
     background-position: center center;
   }
 
@@ -2718,14 +2731,16 @@ html, body {
     font-size: 18px;
   }
 
-  /* HERO SECTION REDIMENSIONADA E CENTRALIZADA NO MOBILE (EXACT VIEWPORT ON IPHONE / ANDROID) */
+  /* HERO SECTION 100% VIEWPORT NO MOBILE (IPHONE / ANDROID) */
   .hero-section {
-    min-height: calc(100vh - 64px) !important;
-    min-height: calc(100svh - 64px) !important;
-    height: auto !important;
+    height: 100vh !important;
+    height: 100dvh !important;
+    min-height: 100vh !important;
+    min-height: 100dvh !important;
+    min-height: -webkit-fill-available !important;
     padding: 20px 0 !important;
     margin-top: 0 !important;
-    margin-bottom: 25px !important;
+    margin-bottom: 30px !important;
     background-image: url('../public/hero_bg.jpg') !important;
     background-size: cover !important;
     background-position: 70% center !important;
@@ -3320,12 +3335,14 @@ html, body {
    ========================================================================== */
 @media (max-width: 480px) {
   .hero-section {
-    min-height: calc(100vh - 64px) !important;
-    min-height: calc(100svh - 64px) !important;
-    height: auto !important;
+    height: 100vh !important;
+    height: 100dvh !important;
+    min-height: 100vh !important;
+    min-height: 100dvh !important;
+    min-height: -webkit-fill-available !important;
     padding: 16px 0 !important;
     margin-top: 0 !important;
-    margin-bottom: 20px !important;
+    margin-bottom: 25px !important;
     background-position: 74% center !important;
     display: flex !important;
     align-items: center !important;
