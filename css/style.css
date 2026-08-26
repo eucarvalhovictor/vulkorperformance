@@ -2720,11 +2720,10 @@ html, body {
 
   /* HERO SECTION REDIMENSIONADA E CENTRALIZADA NO MOBILE (EXACT VIEWPORT ON IPHONE / ANDROID) */
   .hero-section {
-    height: calc(100vh - 64px) !important;
-    height: calc(100svh - 64px) !important;
+    min-height: calc(100vh - 64px) !important;
     min-height: calc(100svh - 64px) !important;
-    max-height: calc(100svh - 64px) !important;
-    padding: 8px 0 !important;
+    height: auto !important;
+    padding: 20px 0 !important;
     margin-top: 0 !important;
     margin-bottom: 25px !important;
     background-image: url('../public/hero_bg.jpg') !important;
@@ -2736,7 +2735,6 @@ html, body {
     align-items: center !important;
     justify-content: center !important;
     box-sizing: border-box !important;
-    overflow: hidden !important;
   }
 
   .hero-overlay {
@@ -2755,15 +2753,15 @@ html, body {
   }
 
   .hero-logo-wrap {
-    margin: 0 auto 8px auto !important;
+    margin: 0 auto 12px auto !important;
     display: flex !important;
     justify-content: center !important;
     width: 100% !important;
   }
 
   .hero-logo-main {
-    height: 50px !important;
-    max-width: 220px !important;
+    height: 56px !important;
+    max-width: 240px !important;
     margin: 0 auto !important;
     display: block !important;
     filter: drop-shadow(0 4px 14px rgba(0, 0, 0, 0.4));
@@ -2771,10 +2769,10 @@ html, body {
 
   .hero-content h1,
   .hero-main-heading {
-    font-size: 19px !important;
-    line-height: 1.22 !important;
-    margin-bottom: 8px !important;
-    letter-spacing: 0.3px !important;
+    font-size: 23px !important;
+    line-height: 1.25 !important;
+    margin-bottom: 12px !important;
+    letter-spacing: 0.5px !important;
     text-align: center !important;
     font-weight: 900 !important;
   }
@@ -2788,11 +2786,11 @@ html, body {
 
   .hero-content p,
   .hero-main-subtext {
-    font-size: 12.5px !important;
-    line-height: 1.42 !important;
-    margin: 0 auto 14px auto !important;
+    font-size: 14.5px !important;
+    line-height: 1.5 !important;
+    margin: 0 auto 20px auto !important;
     text-align: center !important;
-    max-width: 320px !important;
+    max-width: 94% !important;
     color: #E2E4E8 !important;
     word-break: normal !important;
   }
@@ -2801,9 +2799,9 @@ html, body {
   .hero-content div[style*="display: flex"] {
     display: flex !important;
     flex-direction: column !important;
-    gap: 10px !important;
+    gap: 12px !important;
     width: 100% !important;
-    max-width: 260px !important;
+    max-width: 290px !important;
     margin: 0 auto !important;
     align-items: stretch !important;
     justify-content: center !important;
@@ -2817,9 +2815,12 @@ html, body {
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    padding: 10px 16px !important;
-    font-size: 11.5px !important;
-    height: 38px !important;
+    padding: 13px 22px !important;
+    font-size: 13.5px !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.8px !important;
+    min-height: 44px !important;
+    height: auto !important;
     text-align: center !important;
     box-sizing: border-box !important;
   }
@@ -3319,11 +3320,10 @@ html, body {
    ========================================================================== */
 @media (max-width: 480px) {
   .hero-section {
-    height: calc(100vh - 64px) !important;
-    height: calc(100svh - 64px) !important;
+    min-height: calc(100vh - 64px) !important;
     min-height: calc(100svh - 64px) !important;
-    max-height: calc(100svh - 64px) !important;
-    padding: 6px 0 !important;
+    height: auto !important;
+    padding: 16px 0 !important;
     margin-top: 0 !important;
     margin-bottom: 20px !important;
     background-position: 74% center !important;
@@ -3331,42 +3331,41 @@ html, body {
     align-items: center !important;
     justify-content: center !important;
     box-sizing: border-box !important;
-    overflow: hidden !important;
   }
 
   .hero-logo-wrap {
-    margin: 0 auto 6px auto !important;
+    margin: 0 auto 8px auto !important;
   }
 
   .hero-logo-main {
-    height: 44px !important;
-    max-width: 190px !important;
+    height: 50px !important;
+    max-width: 210px !important;
     filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.4));
   }
 
   .hero-content h1,
   .hero-main-heading {
-    font-size: 17.5px !important;
-    line-height: 1.2 !important;
-    margin-bottom: 6px !important;
+    font-size: 20px !important;
+    line-height: 1.25 !important;
+    margin-bottom: 10px !important;
     font-weight: 900 !important;
   }
 
   .hero-content p,
   .hero-main-subtext {
-    font-size: 11.5px !important;
-    line-height: 1.38 !important;
-    margin: 0 auto 12px auto !important;
-    max-width: 300px !important;
+    font-size: 13.5px !important;
+    line-height: 1.45 !important;
+    margin: 0 auto 16px auto !important;
+    max-width: 320px !important;
   }
 
   .hero-cta-buttons-wrap,
   .hero-content div[style*="display: flex"] {
     display: flex !important;
     flex-direction: column !important;
-    gap: 8px !important;
+    gap: 10px !important;
     width: 100% !important;
-    max-width: 240px !important;
+    max-width: 270px !important;
     margin: 0 auto !important;
     align-items: stretch !important;
   }
@@ -3375,9 +3374,12 @@ html, body {
   .hero-content .btn {
     width: 100% !important;
     max-width: 100% !important;
-    padding: 9px 12px !important;
-    font-size: 11px !important;
-    height: 36px !important;
+    padding: 12px 18px !important;
+    font-size: 12.5px !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.8px !important;
+    min-height: 42px !important;
+    height: auto !important;
     box-sizing: border-box !important;
   }
 
