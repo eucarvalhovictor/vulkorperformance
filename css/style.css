@@ -721,15 +721,15 @@ tr:nth-child(even) {
   height: 440px;
   background-color: var(--color-black);
   cursor: pointer;
-  border: 1px solid var(--border-color);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  border: 2px solid var(--color-primary);
+  box-shadow: 0 4px 18px rgba(214, 54, 0, 0.2);
   transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
 }
 
 .category-item-fullimage:hover {
   transform: translateY(-6px);
-  border-color: #FFFFFF;
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.22);
+  border-color: #FF5500;
+  box-shadow: 0 16px 36px rgba(214, 54, 0, 0.4);
 }
 
 /* Corner White Triangle */
@@ -1686,26 +1686,46 @@ tr:nth-child(even) {
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background: #FFFFFF;
-  border: 1.5px solid var(--border-color);
+  background-color: var(--color-primary) !important;
+  border: 2px solid var(--color-primary) !important;
   font-size: 18px;
-  color: #111111;
+  color: #FFFFFF !important;
   cursor: pointer;
   z-index: 35;
   display: flex;
   align-items: center;
   justify-content: center;
   outline: none;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 4px 16px rgba(214, 54, 0, 0.45);
   transition: all 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.ref-arrow:hover {
-  background-color: var(--color-primary);
-  border-color: var(--color-primary);
-  color: #FFFFFF;
+.ref-arrow i,
+.ref-arrow svg {
+  color: #FFFFFF !important;
+  fill: #FFFFFF !important;
+  display: inline-block !important;
+  font-size: 18px !important;
+  line-height: 1 !important;
+  transition: transform 0.2s ease;
+}
+
+.ref-arrow:hover,
+.ref-arrow:focus,
+.ref-arrow:active {
+  background-color: var(--color-primary-hover) !important;
+  border-color: var(--color-primary-hover) !important;
+  color: #FFFFFF !important;
   transform: translateY(-50%) scale(1.08);
-  box-shadow: 0 6px 18px rgba(214, 54, 0, 0.35);
+  box-shadow: 0 6px 22px rgba(214, 54, 0, 0.65);
+  outline: none !important;
+}
+
+.ref-arrow:hover i,
+.ref-arrow:focus i,
+.ref-arrow:active i {
+  color: #FFFFFF !important;
 }
 
 .ref-arrow.prev,
@@ -2700,13 +2720,13 @@ html, body {
 
   /* HERO SECTION REDIMENSIONADA E CENTRALIZADA NO MOBILE (EXACT VIEWPORT ON IPHONE / ANDROID) */
   .hero-section {
-    min-height: calc(100vh - 64px) !important;
-    min-height: calc(100svh - 64px) !important;
-    min-height: calc(100dvh - 64px) !important;
+    height: calc(100vh - 64px) !important;
     height: calc(100svh - 64px) !important;
-    max-height: calc(100dvh - 64px) !important;
-    padding: 15px 0 !important;
-    margin-bottom: 30px !important;
+    min-height: calc(100svh - 64px) !important;
+    max-height: calc(100svh - 64px) !important;
+    padding: 8px 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 25px !important;
     background-image: url('../public/hero_bg.jpg') !important;
     background-size: cover !important;
     background-position: 70% center !important;
@@ -2716,6 +2736,7 @@ html, body {
     align-items: center !important;
     justify-content: center !important;
     box-sizing: border-box !important;
+    overflow: hidden !important;
   }
 
   .hero-overlay {
@@ -2730,19 +2751,19 @@ html, body {
     align-items: center !important;
     justify-content: center !important;
     margin: 0 auto !important;
-    padding: 0 10px !important;
+    padding: 0 12px !important;
   }
 
   .hero-logo-wrap {
-    margin: 0 auto 12px auto !important;
+    margin: 0 auto 8px auto !important;
     display: flex !important;
     justify-content: center !important;
     width: 100% !important;
   }
 
   .hero-logo-main {
-    height: 60px !important;
-    max-width: 240px !important;
+    height: 50px !important;
+    max-width: 220px !important;
     margin: 0 auto !important;
     display: block !important;
     filter: drop-shadow(0 4px 14px rgba(0, 0, 0, 0.4));
@@ -2750,9 +2771,9 @@ html, body {
 
   .hero-content h1,
   .hero-main-heading {
-    font-size: 21px !important;
-    line-height: 1.25 !important;
-    margin-bottom: 12px !important;
+    font-size: 19px !important;
+    line-height: 1.22 !important;
+    margin-bottom: 8px !important;
     letter-spacing: 0.3px !important;
     text-align: center !important;
     font-weight: 900 !important;
@@ -2767,11 +2788,11 @@ html, body {
 
   .hero-content p,
   .hero-main-subtext {
-    font-size: 13.5px !important;
-    line-height: 1.5 !important;
-    margin: 0 auto 18px auto !important;
+    font-size: 12.5px !important;
+    line-height: 1.42 !important;
+    margin: 0 auto 14px auto !important;
     text-align: center !important;
-    max-width: 95% !important;
+    max-width: 320px !important;
     color: #E2E4E8 !important;
     word-break: normal !important;
   }
@@ -2779,24 +2800,28 @@ html, body {
   .hero-cta-buttons-wrap,
   .hero-content div[style*="display: flex"] {
     display: flex !important;
-    flex-direction: row !important;
+    flex-direction: column !important;
     gap: 10px !important;
     width: 100% !important;
-    max-width: 350px !important;
+    max-width: 260px !important;
     margin: 0 auto !important;
-    align-items: center !important;
+    align-items: stretch !important;
     justify-content: center !important;
   }
 
   .hero-cta-buttons-wrap .btn,
   .hero-content .btn {
-    flex: 1 !important;
-    width: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: none !important;
+    display: flex !important;
+    align-items: center !important;
     justify-content: center !important;
-    padding: 12px 14px !important;
+    padding: 10px 16px !important;
     font-size: 11.5px !important;
+    height: 38px !important;
     text-align: center !important;
-    white-space: nowrap !important;
+    box-sizing: border-box !important;
   }
 
   /* SECTION TITLES STANDARDIZATION ON MOBILE */
@@ -2977,13 +3002,31 @@ html, body {
     position: absolute !important;
     top: 50% !important;
     transform: translateY(-50%) !important;
-    width: 40px !important;
-    height: 40px !important;
-    font-size: 15px !important;
+    width: 42px !important;
+    height: 42px !important;
+    font-size: 16px !important;
     border-radius: 50% !important;
-    background-color: #FFFFFF !important;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2) !important;
+    background-color: var(--color-primary) !important;
+    border: 2px solid var(--color-primary) !important;
+    color: #FFFFFF !important;
+    box-shadow: 0 4px 16px rgba(214, 54, 0, 0.45) !important;
     z-index: 35 !important;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .ref-arrow i,
+  .ref-arrow svg {
+    color: #FFFFFF !important;
+    fill: #FFFFFF !important;
+    font-size: 16px !important;
+  }
+
+  .ref-arrow:hover,
+  .ref-arrow:focus,
+  .ref-arrow:active {
+    background-color: var(--color-primary-hover) !important;
+    border-color: var(--color-primary-hover) !important;
+    color: #FFFFFF !important;
   }
 
   .ref-arrow.prev,
@@ -3276,47 +3319,66 @@ html, body {
    ========================================================================== */
 @media (max-width: 480px) {
   .hero-section {
-    min-height: calc(100vh - 64px) !important;
-    min-height: calc(100svh - 64px) !important;
-    min-height: calc(100dvh - 64px) !important;
+    height: calc(100vh - 64px) !important;
     height: calc(100svh - 64px) !important;
-    max-height: calc(100dvh - 64px) !important;
-    padding: 10px 0 !important;
-    margin-bottom: 25px !important;
+    min-height: calc(100svh - 64px) !important;
+    max-height: calc(100svh - 64px) !important;
+    padding: 6px 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 20px !important;
     background-position: 74% center !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+  }
+
+  .hero-logo-wrap {
+    margin: 0 auto 6px auto !important;
   }
 
   .hero-logo-main {
-    height: 52px !important;
-    max-width: 210px !important;
+    height: 44px !important;
+    max-width: 190px !important;
     filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.4));
   }
 
   .hero-content h1,
   .hero-main-heading {
-    font-size: 19px !important;
-    line-height: 1.25 !important;
-    margin-bottom: 10px !important;
+    font-size: 17.5px !important;
+    line-height: 1.2 !important;
+    margin-bottom: 6px !important;
     font-weight: 900 !important;
   }
 
   .hero-content p,
   .hero-main-subtext {
-    font-size: 12.5px !important;
-    line-height: 1.45 !important;
-    margin-bottom: 16px !important;
+    font-size: 11.5px !important;
+    line-height: 1.38 !important;
+    margin: 0 auto 12px auto !important;
+    max-width: 300px !important;
   }
 
   .hero-cta-buttons-wrap,
   .hero-content div[style*="display: flex"] {
+    display: flex !important;
+    flex-direction: column !important;
     gap: 8px !important;
-    max-width: 320px !important;
+    width: 100% !important;
+    max-width: 240px !important;
+    margin: 0 auto !important;
+    align-items: stretch !important;
   }
 
   .hero-cta-buttons-wrap .btn,
   .hero-content .btn {
-    padding: 11px 8px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 9px 12px !important;
     font-size: 11px !important;
+    height: 36px !important;
+    box-sizing: border-box !important;
   }
 
   .categories-grid {
@@ -3359,9 +3421,29 @@ html, body {
   }
 
   .ref-arrow {
-    width: 34px !important;
-    height: 34px !important;
-    font-size: 13px !important;
+    width: 36px !important;
+    height: 36px !important;
+    font-size: 14px !important;
+    background-color: var(--color-primary) !important;
+    border: 2px solid var(--color-primary) !important;
+    color: #FFFFFF !important;
+    box-shadow: 0 4px 14px rgba(214, 54, 0, 0.45) !important;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .ref-arrow i,
+  .ref-arrow svg {
+    color: #FFFFFF !important;
+    fill: #FFFFFF !important;
+    font-size: 14px !important;
+  }
+
+  .ref-arrow:hover,
+  .ref-arrow:focus,
+  .ref-arrow:active {
+    background-color: var(--color-primary-hover) !important;
+    border-color: var(--color-primary-hover) !important;
+    color: #FFFFFF !important;
   }
 
   .ref-arrow.prev,
