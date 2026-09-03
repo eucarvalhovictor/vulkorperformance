@@ -719,15 +719,15 @@ tr:nth-child(even) {
 
 .categories-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  margin-top: 15px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 20px;
 }
 
 .category-item-fullimage {
   position: relative;
   overflow: hidden;
-  height: 440px;
+  height: 460px;
   background-color: var(--color-black);
   cursor: pointer;
   border: 2px solid var(--color-primary);
@@ -750,7 +750,7 @@ tr:nth-child(even) {
   height: 26px;
   background-color: #FFFFFF;
   clip-path: polygon(0 0, 100% 0, 0 100%);
-  z-index: 5;
+  z-index: 10;
   pointer-events: none;
   transition: transform 0.3s ease;
 }
@@ -759,46 +759,412 @@ tr:nth-child(even) {
   transform: scale(1.12);
 }
 
+/* Slides Wrapper with Smooth Crossfade */
+.category-slides-wrapper {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.category-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.8s ease-in-out, visibility 0.8s ease-in-out;
+}
+
+.category-slide.active {
+  opacity: 1;
+  visibility: visible;
+}
+
 .category-fullimage-bg {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
   display: block;
-  filter: grayscale(100%) contrast(1.12);
-  /* Image zoom removed - hover operates only on card */
+  filter: brightness(0.98) contrast(1.05);
+  transition: transform 0.4s ease, filter 0.4s ease;
 }
 
-/* D63600 Overlay */
+.category-item-fullimage:hover .category-fullimage-bg {
+  transform: scale(1.03);
+  filter: brightness(1.05) contrast(1.08);
+}
+
+/* Orange & Black Overlay for Product Cards */
 .category-fullimage-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(214, 54, 0, 0.88) 0%, rgba(214, 54, 0, 0.5) 50%, rgba(214, 54, 0, 0.2) 100%);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.38) 0%, rgba(214, 54, 0, 0.24) 40%, rgba(0, 0, 0, 0.94) 100%);
   display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  padding: 25px 15px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 22px 16px;
   transition: background 0.35s ease;
+  z-index: 6;
+  text-align: center;
 }
 
 .category-item-fullimage:hover .category-fullimage-overlay {
-  background: linear-gradient(to top, rgba(214, 54, 0, 0.95) 0%, rgba(214, 54, 0, 0.6) 50%, rgba(214, 54, 0, 0.3) 100%);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(214, 54, 0, 0.44) 42%, rgba(0, 0, 0, 0.98) 100%);
+}
+
+.category-fullimage-tag {
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 4px;
 }
 
 .category-fullimage-title {
   font-family: var(--font-family);
   font-weight: 900;
-  font-size: 24px;
+  font-size: 23px;
   text-transform: uppercase;
   letter-spacing: 1.5px;
   color: #FFFFFF;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+  margin-bottom: 8px;
   transition: transform 0.3s ease;
 }
 
 .category-item-fullimage:hover .category-fullimage-title {
-  transform: translateY(-4px);
+  transform: translateY(-2px);
+}
+
+.category-state-dots {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.category-state-dots .c-dot {
+  width: 7px;
+  height: 7px;
+  background-color: rgba(255, 255, 255, 0.4);
+  display: inline-block;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+
+.category-state-dots .c-dot.active {
+  background-color: #FFFFFF;
+  transform: scale(1.4);
+}
+
+/* ==========================================================================
+   SUBLIMAÇÃO & PERSONALIZAÇÃO SECTION (O FORTE DA VULKOR)
+   ========================================================================== */
+.sublimation-section {
+  padding: 80px 0;
+  background-color: var(--color-bg-page);
+  position: relative;
+}
+
+.sublimation-header-box {
+  text-align: center;
+  max-width: 860px;
+  margin: 0 auto 50px auto;
+}
+
+.sublimation-badge-top {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--color-black);
+  color: var(--color-white);
+  padding: 6px 14px;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 15px;
+  border-left: 3px solid var(--color-primary);
+}
+
+.sublimation-main-title {
+  font-size: clamp(26px, 4vw, 38px);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--color-black);
+  line-height: 1.2;
+  margin-bottom: 14px;
+}
+
+.sublimation-main-subtitle {
+  font-size: 15px;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+
+.sublimation-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+/* Interactive Crossfade Preview Box */
+.sublimation-preview-container {
+  background-color: #0d0d0d;
+  border: 2px solid var(--color-black);
+  position: relative;
+  box-shadow: 0 12px 36px rgba(0,0,0,0.15);
+  overflow: hidden;
+}
+
+.sublimation-preview-stage {
+  position: relative;
+  height: 480px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.sublimation-preview-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.7s ease-in-out, visibility 0.7s ease-in-out;
+}
+
+.sublimation-preview-slide.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.sublimation-preview-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Signature Triangle on Sublimation Image Stage */
+.sublimation-card-triangle {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  width: 24px;
+  height: 24px;
+  background-color: var(--color-primary);
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+  z-index: 10;
+  pointer-events: none;
+  transition: transform 0.3s ease;
+}
+
+.sublimation-preview-container:hover .sublimation-card-triangle {
+  transform: scale(1.2);
+}
+
+.sublimation-slide-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.96) 0%, rgba(0,0,0,0.75) 50%, rgba(0,0,0,0.2) 80%, transparent 100%);
+  padding: 28px 22px 18px 22px;
+  color: #FFFFFF !important;
+  z-index: 8;
+}
+
+.sublimation-slide-tag {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--color-primary) !important;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.sublimation-slide-name {
+  font-size: 19px;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #FFFFFF !important;
+  margin: 0;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+/* Control buttons below preview */
+.sublimation-controls-bar {
+  display: flex;
+  background-color: #000000;
+  border-top: 1px solid rgba(255,255,255,0.12);
+}
+
+.sublimation-toggle-btn {
+  flex: 1;
+  background: transparent;
+  border: none;
+  border-right: 1px solid rgba(255,255,255,0.1);
+  color: #9CA3AF;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 14px 8px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.sublimation-toggle-btn:last-child {
+  border-right: none;
+}
+
+.sublimation-toggle-btn.active,
+.sublimation-toggle-btn:hover {
+  background-color: var(--color-primary);
   color: #FFFFFF;
+}
+
+/* Right Column: Fabrics & Process */
+.sublimation-info-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.fabrics-highlight-title {
+  font-size: 16px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--color-black);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.fabrics-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.fabric-card-item {
+  background: var(--color-white);
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--color-black);
+  padding: 14px 18px;
+  transition: all 0.25s ease;
+}
+
+.fabric-card-item:hover {
+  border-left-color: var(--color-primary);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  transform: translateX(4px);
+}
+
+.fabric-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.fabric-card-name {
+  font-size: 13.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--color-black);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.fabric-card-name i {
+  color: var(--color-primary);
+  font-size: 13px;
+}
+
+.fabric-card-badge {
+  font-size: 9px;
+  font-weight: 800;
+  text-transform: uppercase;
+  background-color: #F3F4F6;
+  color: var(--color-black);
+  padding: 2px 8px;
+  letter-spacing: 0.5px;
+}
+
+.fabric-card-desc {
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* 4 Steps Order Process */
+.order-process-box {
+  background: var(--color-black);
+  color: var(--color-white);
+  padding: 22px;
+  border-left: 4px solid var(--color-primary);
+}
+
+.order-process-title {
+  font-size: 14px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #FFFFFF;
+  margin-bottom: 14px;
+}
+
+.order-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.order-step-item {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 10px 12px;
+  border-left: 2px solid var(--color-primary);
+}
+
+.order-step-num {
+  font-size: 10px;
+  font-weight: 800;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  margin-bottom: 2px;
+  display: block;
+}
+
+.order-step-text {
+  font-size: 11.5px;
+  color: #E5E7EB;
+  margin: 0;
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+.sublimation-cta-btn-wrap {
+  margin-top: 10px;
 }
 
 /* ==========================================================================
@@ -2254,21 +2620,23 @@ tr:nth-child(even) {
 }
 
 .faq-item {
-  background-color: #111111;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: linear-gradient(135deg, #141414 0%, #0d0d0d 100%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   position: relative;
   overflow: hidden;
-  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.25s ease;
 }
 
 .faq-item:hover {
   border-color: #FFFFFF;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
+  transform: translateY(-2px);
 }
 
 .faq-item.active {
   border-color: #FFFFFF;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+  border-left: 4px solid #FFFFFF;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.55);
 }
 
 /* White Corner Triangle Detached from Aresta */
@@ -2286,7 +2654,7 @@ tr:nth-child(even) {
 }
 
 .faq-item:hover .faq-item-triangle {
-  transform: scale(1.2);
+  transform: scale(1.25);
 }
 
 .faq-question {
@@ -2294,42 +2662,63 @@ tr:nth-child(even) {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 24px 20px 44px;
+  padding: 22px 24px 22px 46px;
   background: transparent;
   border: none;
-  font-size: 15px;
+  font-size: 15.5px;
   font-weight: 700;
-  color: #FFFFFF;
+  color: #FFFFFF !important;
   text-align: left;
   cursor: pointer;
   font-family: inherit;
-  transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  letter-spacing: 0.2px;
 }
 
 .faq-question:hover {
-  background-color: rgba(255, 255, 255, 0.04);
+  background-color: rgba(255, 255, 255, 0.05);
 }
 
 .faq-icon {
-  font-size: 15px;
-  color: var(--color-primary);
-  transition: transform 0.3s ease;
+  font-size: 16px;
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.12);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
   flex-shrink: 0;
   margin-left: 15px;
 }
 
 .faq-item.active .faq-icon {
   transform: rotate(45deg);
-  color: #FFFFFF;
+  background: #FFFFFF;
+  color: var(--color-primary);
 }
 
 .faq-answer {
   display: none;
-  padding: 16px 24px 24px 44px;
-  font-size: 13.5px;
-  color: #D1D5DB;
-  line-height: 1.7;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 20px 28px 28px 46px;
+  font-size: 15px;
+  color: #FFFFFF !important;
+  line-height: 1.8;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  font-weight: 400;
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.faq-answer p {
+  color: #FFFFFF !important;
+  margin-bottom: 12px;
+  line-height: 1.8;
+}
+
+.faq-answer p:last-child {
+  margin-bottom: 0;
 }
 
 .faq-item.active .faq-answer {
@@ -2338,16 +2727,22 @@ tr:nth-child(even) {
 }
 
 .faq-answer strong {
-  color: #FFFFFF;
+  color: #FFFFFF !important;
+  font-weight: 700;
+  text-shadow: 0 0 1px rgba(255, 255, 255, 0.3);
 }
 
 .faq-answer ul {
-  margin: 10px 0;
-  padding-left: 20px;
+  margin: 14px 0;
+  padding-left: 24px;
+  list-style-type: square;
 }
 
 .faq-answer li {
-  margin-bottom: 6px;
+  margin-bottom: 8px;
+  color: #FFFFFF !important;
+  font-size: 14.5px;
+  line-height: 1.6;
 }
 
 /* ==========================================================================
@@ -2667,9 +3062,13 @@ html, body {
     gap: 25px;
   }
 
-  .footer-main-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 35px;
+  .sublimation-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .sublimation-preview-stage {
+    height: 400px;
   }
 }
 
@@ -3562,3 +3961,50 @@ html, body {
     transition: none !important;
   }
 }
+
+/* ==========================================================================
+   CIRCULO PRETO AO REDOR DO MOUSE (CURSOR FOLLOWER - SOMENTE DESKTOP)
+   ========================================================================== */
+.cursor-follower {
+  display: none !important;
+}
+
+@media (min-width: 992px) and (hover: hover) and (pointer: fine) {
+  .cursor-follower {
+    display: block !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 36px;
+    height: 36px;
+    border: 2px solid #000000 !important;
+    border-radius: 50% !important;
+    -webkit-border-radius: 50% !important;
+    pointer-events: none;
+    z-index: 999999;
+    transform: translate(-50%, -50%);
+    transition: width 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+                height 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+                background-color 0.2s ease,
+                border-color 0.2s ease,
+                opacity 0.25s ease;
+    opacity: 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    will-change: transform, width, height;
+  }
+
+  .cursor-follower.active {
+    opacity: 1;
+  }
+
+  .cursor-follower.hovering {
+    width: 52px;
+    height: 52px;
+    background-color: rgba(0, 0, 0, 0.12);
+    border-color: #000000 !important;
+    border-radius: 50% !important;
+    border-width: 2.5px !important;
+  }
+}
+
+

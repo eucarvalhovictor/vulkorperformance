@@ -77,7 +77,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <!-- Design System CSS -->
-  <link rel="stylesheet" href="css/style.css?v=2.3">
+  <link rel="stylesheet" href="css/style.css?v=2.5">
 
   <!-- AEO / Structured Data JSON-LD (Schema.org) -->
   <script type="application/ld+json">
@@ -160,7 +160,7 @@
             "name": "Qual o diferencial das Rashguards e Shorts No-Gi da Vulkor?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Nossas rashguards contam com costuras planas flatlock 4 agulhas anti-atrito, tecnologia AeroDry™ de evaporação instantânea e fita de silicone na cintura. Os shorts possuem abertura lateral de 12cm e cós sem botões metálicos."
+              "text": "Nossas rashguards contam com costuras reforçadas que não machucam a pele, tecidos respiráveis de secagem rápida e fita de silicone na cintura. Os shorts possuem abertura lateral e cós anatômico."
             }
           },
           {
@@ -168,7 +168,7 @@
             "name": "A Vulkor faz uniformes e kimonos personalizados para academias e equipes?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Sim! Produzimos lotes sob medida para academias, filiais e equipes competitivas com personalização completa de patches, bordados e cores oficiais."
+              "text": "Sim! Produzimos lotes sob medida para academias, filiais e equipes competitivas com personalização completa de estampas, cores e logotipos."
             }
           },
           {
@@ -189,9 +189,9 @@
           {
             "@type": "Product",
             "position": 1,
-            "name": "Kimono BJJ Pro Comp 450GSM",
+            "name": "Kimono BJJ Pro Comp",
             "image": "https://vulkorperformance.com.br/public/kimonos.jpg",
-            "description": "Kimono trançado 450GSM 100% algodão pré-encolhido com gola vulcanizada EVA e modelagem 0-Radius antipegada.",
+            "description": "Kimono reforçado de alta durabilidade com gola emborrachada e modelagem anatômica antipegada.",
             "brand": { "@type": "Brand", "name": "Vulkor Performance" },
             "offers": {
               "@type": "Offer",
@@ -205,7 +205,7 @@
             "position": 2,
             "name": "Camisa Compressão Rashguard No-Gi",
             "image": "https://vulkorperformance.com.br/public/camisas.jpg",
-            "description": "Rashguard de compressão técnica com costuras flatlock 4 agulhas e tecido elástico de evaporação rápida.",
+            "description": "Rashguard de compressão técnica com costuras reforçadas que não machucam a pele e tecido respirável de secagem rápida.",
             "brand": { "@type": "Brand", "name": "Vulkor Performance" },
             "offers": {
               "@type": "Offer",
@@ -266,18 +266,14 @@
               <img src="public/logo.png" alt="Vulkor Performance - Força Para Dominar" class="hero-logo-main">
             </div>
 
-            <h1 class="hero-main-heading">A SOLUÇÃO PARA QUEM BUSCA <span class="hero-highlight">MÁXIMA PERFORMANCE</span> E <span class="hero-highlight">PROTEÇÃO</span> NO COMBATE</h1>
+            <h1 class="hero-main-heading">A SOLUÇÃO PARA QUEM BUSCA <span class="hero-highlight">MÁXIMA PERFORMANCE</span> COM <span class="hero-highlight">CONFORTO</span> NO COMBATE</h1>
             <p class="hero-main-subtext">
-              Fabricamos kimonos, camisetas e vestuário técnico de alta densidade para atletas e campeões. Construídos com padrão mil-spec e estética minimalista 0-radius para <strong>Jiu-Jitsu, Boxe, Taekwondo e MMA</strong>.
+              Confeccionamos rashguards, camisetas, croppeds, shorts, leggings e vestuário técnico de alta densidade para atletas e academias. Desenvolvidos em <strong>tecidos respiráveis, de altíssima durabilidade e máxima performance</strong>, aliados à excelência em sublimação e personalização exclusiva de estampas para <strong>Jiu-Jitsu, Boxe, Muay Thai, MMA, dentre outros</strong>.
             </p>
             <div class="hero-cta-buttons-wrap">
               <a href="#categorias" class="btn btn-primary" onclick="app.scrollToSection('categorias', event)">
                 <div class="btn-corner-triangle"></div>
-                Conhecer Coleções
-              </a>
-              <a href="#sobre" class="btn btn-hero-outline-white" onclick="app.scrollToSection('sobre', event)">
-                <div class="btn-corner-triangle"></div>
-                Sobre a Vulkor
+                Conheça nossos produtos
               </a>
             </div>
           </div>
@@ -292,11 +288,112 @@
           <h2 class="products-combat-title">PRODUTOS DE COMBATE</h2>
 
           <div class="categories-grid" id="modalitiesCategoryGrid">
-            <!-- Rendered dynamically via app.js with .category-item-fullimage -->
+            <!-- Rendered dynamically via app.js with .category-item-fullimage and 'Sua Personalização Aqui' badge -->
           </div>
         </section>
 
-        <!-- 2. BENEFÍCIOS SECTION (ABAIXO DE PRODUTOS DE COMBATE) -->
+      </div> <!-- CLOSE .container -->
+
+      <!-- ==================== 2. SUBLIMAÇÃO & PERSONALIZAÇÃO (O FORTE DA VULKOR) ==================== -->
+      <section id="sublimacao" class="sublimation-section">
+        <div class="container">
+          
+          <div class="sublimation-header-box">
+            <h2 class="sublimation-main-title">SUBLIMAÇÃO TOTAL & PERSONALIZAÇÃO EXCLUSIVA</h2>
+            <p class="sublimation-main-subtitle">
+              O forte da empresa é a confecção própria com estampas da marca <strong>Vulkor</strong> e desenvolvimento de <strong>projetos 100% personalizados</strong> para academias, equipes de luta, filiais e atletas. Sublimação digital de alta definição em tecidos de alta durabilidade e performance: cores vivas, toque zero, não racha e não desbota.
+            </p>
+          </div>
+
+          <div class="sublimation-grid">
+            
+            <!-- Left: Single High-Impact Showcase -->
+            <div class="sublimation-preview-container">
+              <div class="sublimation-preview-stage" id="sublimationStage">
+                <!-- Signature Triangle on image corner -->
+                <div class="sublimation-card-triangle"></div>
+                <div class="sublimation-preview-slide active">
+                  <img src="public/rashguard_personalizada.jpg" alt="Vestuário Técnico Vulkor com Sublimação e Personalização">
+                  <div class="sublimation-slide-caption">
+                    <span class="sublimation-slide-tag">CONFECÇÃO PRÓPRIA // SUBLIMAÇÃO TOTAL</span>
+                    <h3 class="sublimation-slide-name">Personalize com a Marca da sua Academia</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Fabrics & 4-Step Order Process -->
+            <div class="sublimation-info-wrapper">
+              
+              <div>
+                <h3 class="fabrics-highlight-title"><i class="fa-solid fa-layer-group"></i> Engenharia Têxtil de Alto Padrão:</h3>
+                
+                <div class="fabrics-grid">
+                  <div class="fabric-card-item">
+                    <div class="fabric-card-top">
+                      <span class="fabric-card-name"><i class="fa-solid fa-wind"></i> Tecidos Respiráveis</span>
+                      <span class="fabric-card-badge">RESPIRABILIDADE TÉRMICA</span>
+                    </div>
+                    <p class="fabric-card-desc">Controle térmico inteligente e microcanais de ventilação que evaporam o suor instantaneamente com proteção UV50+ e frescor constante durante os combates.</p>
+                  </div>
+
+                  <div class="fabric-card-item">
+                    <div class="fabric-card-top">
+                      <span class="fabric-card-name"><i class="fa-solid fa-shield-halved"></i> Alta Durabilidade & Resistência</span>
+                      <span class="fabric-card-badge">RESISTÊNCIA AO ATRITO</span>
+                    </div>
+                    <p class="fabric-card-desc">Construção têxtil ultra resistente projetada para suportar atrito contínuo no tatame, raspagens e tração extrema sem perder forma nem esgarçar.</p>
+                  </div>
+
+                  <div class="fabric-card-item">
+                    <div class="fabric-card-top">
+                      <span class="fabric-card-name"><i class="fa-solid fa-bolt-lightning"></i> Máxima Performance & Conforto</span>
+                      <span class="fabric-card-badge">ALTA ELASTICIDADE</span>
+                    </div>
+                    <p class="fabric-card-desc">Elasticidade multidirecional e modelagem anatômica que garantem amplitude total para chutes, movimentações rápidas e finalizações sem restrições.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 4 Steps Order Process -->
+              <div class="order-process-box">
+                <h4 class="order-process-title">Como Funciona o Pedido Personalizado:</h4>
+                <div class="order-steps-grid">
+                  <div class="order-step-item">
+                    <span class="order-step-num">PASSO 01</span>
+                    <p class="order-step-text">Escolha os modelos (Rashguards, Camisetas, Croppeds, Shorts, Kimonos).</p>
+                  </div>
+                  <div class="order-step-item">
+                    <span class="order-step-num">PASSO 02</span>
+                    <p class="order-step-text">Envie o logotipo, cores e detalhes da sua academia via WhatsApp.</p>
+                  </div>
+                  <div class="order-step-item">
+                    <span class="order-step-num">PASSO 03</span>
+                    <p class="order-step-text">Montamos o layout e amostra virtual para aprovação sem compromisso.</p>
+                  </div>
+                  <div class="order-step-item">
+                    <span class="order-step-num">PASSO 04</span>
+                    <p class="order-step-text">Confecção própria e envio dentro do prazo combinado para todo o Brasil.</p>
+                  </div>
+                </div>
+
+                <div class="sublimation-cta-btn-wrap">
+                  <a href="https://api.whatsapp.com/send?phone=5511999999999&text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20de%20vestu%C3%A1rio%20personalizado%20para%20minha%20academia." target="_blank" class="btn btn-primary btn-block" style="font-size: 13px;">
+                    <div class="btn-corner-triangle"></div>
+                    <i class="fa-brands fa-whatsapp" style="font-size: 16px;"></i> Solicitar Projeto Personalizado no WhatsApp
+                  </a>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- 3. BENEFÍCIOS SECTION -->
+      <div class="container">
         <section id="beneficios" class="benefits-section">
           <h2 class="benefits-main-title">POR QUE USAR VULKOR?</h2>
 
@@ -306,11 +403,22 @@
               <div class="benefit-card-header">
                 <div class="benefit-triangle-wrap">
                   <div class="benefit-triangle-shape"></div>
+                  <i class="fa-solid fa-palette benefit-triangle-icon"></i>
+                </div>
+                <h3 class="benefit-card-title">Sublimação Total & Personalização</h3>
+              </div>
+              <p class="benefit-card-desc">Estampas da marca Vulkor e desenvolvimento exclusivo de uniformes completos para sua academia ou equipe, com fidelidade de cores e toque zero.</p>
+            </div>
+
+            <div class="benefit-card">
+              <div class="benefit-card-header">
+                <div class="benefit-triangle-wrap">
+                  <div class="benefit-triangle-shape"></div>
                   <i class="fa-solid fa-shield-halved benefit-triangle-icon"></i>
                 </div>
                 <h3 class="benefit-card-title">Modelagem 0-Radius Antipegada</h3>
               </div>
-              <p class="benefit-card-desc">Corte anatômico milimétrico que se molda ao corpo do atleta, eliminando excessos de tecido nas axilas e mangas para neutralizar as pegadas dos adversários.</p>
+              <p class="benefit-card-desc">Corte anatômico milimétrico que se molda ao corpo do atleta, eliminando excessos de tecido para dificultar as pegadas adversárias no tatame.</p>
             </div>
 
             <div class="benefit-card">
@@ -319,20 +427,9 @@
                   <div class="benefit-triangle-shape"></div>
                   <i class="fa-solid fa-bolt benefit-triangle-icon"></i>
                 </div>
-                <h3 class="benefit-card-title">Trançado 450GSM Ultrarresistente</h3>
+                <h3 class="benefit-card-title">Tecidos Respiráveis, Duráveis e Flexíveis</h3>
               </div>
-              <p class="benefit-card-desc">Fios de algodão pré-encolhido com reforço de costura tripla balística e resistência à tração superior a 350kgf contra rasgos e deformações.</p>
-            </div>
-
-            <div class="benefit-card">
-              <div class="benefit-card-header">
-                <div class="benefit-triangle-wrap">
-                  <div class="benefit-triangle-shape"></div>
-                  <i class="fa-solid fa-bacteria benefit-triangle-icon"></i>
-                </div>
-                <h3 class="benefit-card-title">Gola EVA Vulcanizada Antimicrobiana</h3>
-              </div>
-              <p class="benefit-card-desc">Núcleo de borracha EVA vulcanizada que não retém umidade, seca 4x mais rápido que as convencionais e é 100% imune a bactérias e fungos.</p>
+              <p class="benefit-card-desc">Confecção de alta resistência com controle térmico inteligente, tecidos respiráveis de secagem rápida e costuras reforçadas que não machucam a pele.</p>
             </div>
 
             <div class="benefit-card">
@@ -341,57 +438,60 @@
                   <div class="benefit-triangle-shape"></div>
                   <i class="fa-solid fa-truck-fast benefit-triangle-icon"></i>
                 </div>
-                <h3 class="benefit-card-title">Fabricação Própria & Envio Expresso</h3>
+                <h3 class="benefit-card-title">Fabricação Própria & Prazo Rigoroso</h3>
               </div>
-              <p class="benefit-card-desc">Produzido com controle rigoroso de qualidade em Marília, SP. Envio rápido para todo o Brasil, suporte especializado e garantia de fábrica.</p>
+              <p class="benefit-card-desc">Confecção própria em Marília, SP. Controle rigoroso de qualidade e garantia de entrega rigorosamente dentro do prazo combinado para todo o Brasil.</p>
             </div>
 
           </div>
         </section>
-
       </div> <!-- CLOSE .container AFTER BENEFÍCIOS -->
 
       <!-- MARQUEE ROLANTE TÁTICA (FULL-WIDTH SEÇÃO) -->
       <div class="tactical-marquee-wrapper" aria-hidden="true">
         <div class="marquee-group">
-          <div class="marquee-item"><i class="fa-solid fa-play marquee-icon"></i> MODELAGEM 0-RADIUS ANTIPEGADA</div>
+          <div class="marquee-item"><i class="fa-solid fa-shield-halved marquee-icon"></i> JIU-JITSU</div>
           <div class="marquee-divider">//</div>
-          <div class="marquee-item"><i class="fa-solid fa-shield-halved marquee-icon"></i> TRANÇADO 450GSM ULTRARRESISTENTE</div>
+          <div class="marquee-item"><i class="fa-solid fa-fire marquee-icon"></i> MUAY THAI</div>
           <div class="marquee-divider">//</div>
-          <div class="marquee-item"><i class="fa-solid fa-bolt marquee-icon"></i> GOLA EVA VULCANIZADA ANTIMICROBIANA</div>
+          <div class="marquee-item"><i class="fa-solid fa-hand-fist marquee-icon"></i> BOXE & MMA</div>
           <div class="marquee-divider">//</div>
-          <div class="marquee-item"><i class="fa-solid fa-dumbbell marquee-icon"></i> RESISTÊNCIA À TRAÇÃO +350KGF</div>
+          <div class="marquee-item"><i class="fa-solid fa-palette marquee-icon"></i> SUBLIMAÇÃO TOTAL EM ALTA DEFINIÇÃO</div>
           <div class="marquee-divider">//</div>
-          <div class="marquee-item"><i class="fa-solid fa-fire-flame-curved marquee-icon"></i> COSTURA TRIPLA BALÍSTICA</div>
+          <div class="marquee-item"><i class="fa-solid fa-users marquee-icon"></i> PERSONALIZAÇÃO PARA ACADEMIAS & EQUIPES</div>
           <div class="marquee-divider">//</div>
-          <div class="marquee-item"><i class="fa-solid fa-feather-pointed marquee-icon"></i> ALGODÃO 100% PRÉ-ENCOLHIDO</div>
+          <div class="marquee-item"><i class="fa-solid fa-wind marquee-icon"></i> TECIDOS RESPIRÁVEIS & CONFORTÁVEIS</div>
+          <div class="marquee-divider">//</div>
+          <div class="marquee-item"><i class="fa-solid fa-shield-halved marquee-icon"></i> ALTA DURABILIDADE & RESISTÊNCIA</div>
           <div class="marquee-divider">//</div>
           <div class="marquee-item"><i class="fa-solid fa-medal marquee-icon"></i> HOMOLOGADO CBJJ & IBJJF</div>
           <div class="marquee-divider">//</div>
-          <div class="marquee-item"><i class="fa-solid fa-truck-fast marquee-icon"></i> FABRICAÇÃO PRÓPRIA NACIONAL</div>
+          <div class="marquee-item"><i class="fa-solid fa-truck-fast marquee-icon"></i> ENTREGA NO PRAZO COMBINADO</div>
           <div class="marquee-divider">//</div>
         </div>
         <div class="marquee-group" aria-hidden="true">
-          <div class="marquee-item"><i class="fa-solid fa-play marquee-icon"></i> MODELAGEM 0-RADIUS ANTIPEGADA</div>
+          <div class="marquee-item"><i class="fa-solid fa-shield-halved marquee-icon"></i> JIU-JITSU</div>
           <div class="marquee-divider">//</div>
-          <div class="marquee-item"><i class="fa-solid fa-shield-halved marquee-icon"></i> TRANÇADO 450GSM ULTRARRESISTENTE</div>
+          <div class="marquee-item"><i class="fa-solid fa-fire marquee-icon"></i> MUAY THAI</div>
           <div class="marquee-divider">//</div>
-          <div class="marquee-item"><i class="fa-solid fa-bolt marquee-icon"></i> GOLA EVA VULCANIZADA ANTIMICROBIANA</div>
+          <div class="marquee-item"><i class="fa-solid fa-hand-fist marquee-icon"></i> BOXE & MMA</div>
           <div class="marquee-divider">//</div>
-          <div class="marquee-item"><i class="fa-solid fa-dumbbell marquee-icon"></i> RESISTÊNCIA À TRAÇÃO +350KGF</div>
+          <div class="marquee-item"><i class="fa-solid fa-palette marquee-icon"></i> SUBLIMAÇÃO TOTAL EM ALTA DEFINIÇÃO</div>
           <div class="marquee-divider">//</div>
-          <div class="marquee-item"><i class="fa-solid fa-fire-flame-curved marquee-icon"></i> COSTURA TRIPLA BALÍSTICA</div>
+          <div class="marquee-item"><i class="fa-solid fa-users marquee-icon"></i> PERSONALIZAÇÃO PARA ACADEMIAS & EQUIPES</div>
           <div class="marquee-divider">//</div>
-          <div class="marquee-item"><i class="fa-solid fa-feather-pointed marquee-icon"></i> ALGODÃO 100% PRÉ-ENCOLHIDO</div>
+          <div class="marquee-item"><i class="fa-solid fa-wind marquee-icon"></i> TECIDOS RESPIRÁVEIS & CONFORTÁVEIS</div>
+          <div class="marquee-divider">//</div>
+          <div class="marquee-item"><i class="fa-solid fa-shield-halved marquee-icon"></i> ALTA DURABILIDADE & RESISTÊNCIA</div>
           <div class="marquee-divider">//</div>
           <div class="marquee-item"><i class="fa-solid fa-medal marquee-icon"></i> HOMOLOGADO CBJJ & IBJJF</div>
           <div class="marquee-divider">//</div>
-          <div class="marquee-item"><i class="fa-solid fa-truck-fast marquee-icon"></i> FABRICAÇÃO PRÓPRIA NACIONAL</div>
+          <div class="marquee-item"><i class="fa-solid fa-truck-fast marquee-icon"></i> ENTREGA NO PRAZO COMBINADO</div>
           <div class="marquee-divider">//</div>
         </div>
       </div>
 
-      <!-- 3. SOBRE A VULKOR SECTION (DENTRO DE SEU PRÓPRIO CONTAINER) -->
+      <!-- 4. SOBRE A VULKOR SECTION (DENTRO DE SEU PRÓPRIO CONTAINER) -->
       <div class="container">
         <section id="sobre" class="about-section-wrapper">
           <div class="about-layout-container">
@@ -420,10 +520,10 @@
               <!-- Right Side: Text & Engineering Philosophy -->
               <div class="about-content-wrapper">
                 <p class="about-lead-text">
-                  A <strong>Vulkor Performance</strong> é uma fábrica de vestuário esportivo especializada em artes marciais, localizada em Marília, São Paulo. Nascida da paixão pelo esporte de combate e pela excelência técnica, a Vulkor Performance dedica-se a criar uniformes e roupas de alta performance para atletas que buscam o melhor de si mesmos no tatami.
+                  A <strong>Vulkor Performance</strong> é uma confecção e loja própria de vestuário esportivo especializada em artes marciais, localizada na cidade de Marília em São Paulo. Nascida da paixão pelo esporte de combate e pela excelência técnica, a Vulkor Performance dedica-se a criar uniformes e roupas de alta performance para atletas que buscam o melhor de si mesmos no tatame.
                 </p>
                 <p class="about-desc-text">
-                  Estamos comprometidos em democratizar o acesso a vestuário esportivo de qualidade para atletas de todos os níveis — desde iniciantes que descobrem sua paixão pelas artes marciais até competidores de alto rendimento. Trabalhamos com fabricação local, garantindo controle de qualidade rigoroso e entrega rápida para todo o Brasil.
+                  Estamos comprometidos em democratizar o acesso a vestuário esportivo de qualidade para atletas de todos os níveis — desde iniciantes que descobrem sua paixão pelas artes marciais até competidores de alto rendimento. Trabalhamos com fabricação própria, garantindo controle de qualidade rigoroso e entrega dentro do prazo combinado para todo o Brasil.
                 </p>
               </div>
 
@@ -435,7 +535,7 @@
         </section>
       </div> <!-- CLOSE .container AFTER SOBRE NÓS -->
 
-      <!-- 4. DEPOIMENTOS SECTION (100% FULL-WIDTH SEÇÃO TOTAL COM PATTERN DE TRIÂNGULOS) -->
+      <!-- 5. DEPOIMENTOS SECTION (100% FULL-WIDTH SEÇÃO TOTAL COM PATTERN DE TRIÂNGULOS) -->
       <section id="depoimentos" class="testimonials-fullwidth-section">
         <div class="container testimonials-ref-container">
           <h2 class="testimonials-ref-title">DEPOIMENTOS DE CLIENTES</h2>
@@ -461,11 +561,11 @@
                 </div>
               </div>
 
-              <!-- Card 2: MMA -->
+              <!-- Card 2: Muay Thai & MMA -->
               <div class="testimonial-ref-card" data-index="1" onclick="app.goToTestimonial(1)">
                 <div class="ref-card-content">
                   <p class="ref-quote">
-                    “Os shorts Flex-Split e as rashguards aguentam a transição pesada de grade e chão sem travar os chutes altos. É impressionante como o tecido não encharca com suor nem pesa, mesmo no quinto round de sparring!”
+                    “Os shorts Flex-Split e as rashguards aguentam os treinos pesados de Muay Thai e MMA sem travar os chutes altos. Fizemos os uniformes de toda a nossa equipe com sublimação personalizada e a qualidade das estampas ficou impecável!”
                   </p>
                 </div>
                 <div class="ref-author-wrapper">
@@ -477,7 +577,7 @@
               <div class="testimonial-ref-card" data-index="2" onclick="app.goToTestimonial(2)">
                 <div class="ref-card-content">
                   <p class="ref-quote">
-                    “Padronizamos os Doboks Aerotech e camisetas para toda a equipe competitiva da academia. O estalo sonoro dos chutes ficou muito mais nítido para a pontuação e o recorte Diamond Crotch de 180° dá amplitude máxima.”
+                    “Padronizamos os uniformes e camisetas Dry-Fit para toda a equipe competitiva da academia. O caimento é perfeito, a entrega foi realizada exatamente no prazo combinado e as cores da sublimação ficaram vibrantes.”
                   </p>
                 </div>
                 <div class="ref-author-wrapper">
@@ -489,7 +589,7 @@
               <div class="testimonial-ref-card" data-index="3" onclick="app.goToTestimonial(3)">
                 <div class="ref-card-content">
                   <p class="ref-quote">
-                    “As camisetas Dry-Fit e regatas de treino da Vulkor são outro patamar de confecção. Costuras planas flatlock que não causam assaduras com o suor e uma modelagem reta impecável que acompanha a rotação do tronco!”
+                    “As camisetas e regatas de treino da Vulkor são outro patamar de confecção. Costuras macias e reforçadas que não causam assaduras com o suor e uma modelagem anatômica que acompanha a rotação do tronco!”
                   </p>
                 </div>
                 <div class="ref-author-wrapper">
@@ -526,7 +626,7 @@
       <!-- RE-OPEN .container FOR CONTACT SECTION -->
       <div class="container">
 
-        <!-- 5. CONTACT & LOCATION SECTION (FORM LEFT + MAP/PHONE RIGHT) -->
+        <!-- 6. CONTACT & LOCATION SECTION (FORM LEFT + MAP/PHONE RIGHT) -->
         <section id="contato" class="contact-section">
           <div class="contact-grid">
             
@@ -551,15 +651,20 @@
 
                 <label for="contactSport">Tipo de Vestuário / Interesse *</label>
                 <select id="contactSport" required>
+                  <option value="Personalização & Sublimação para Academia / Equipe">Personalização & Sublimação Total para Academia / Equipe</option>
+                  <option value="Rashguards Manga Curta e Manga Longa">Rashguards (Manga Curta / Manga Longa)</option>
+                  <option value="Camisetas Técnicas e Casuais">Camisetas Técnicas e Casuais</option>
+                  <option value="Macaquinho Feminino de Compressão">Macaquinho Feminino de Compressão</option>
+                  <option value="Body Feminino Anatômico">Body Feminino Anatômico</option>
+                  <option value="Cropped Feminino (Manga Curta / Longa)">Cropped Feminino (Manga Curta / Longa)</option>
+                  <option value="Shorts Feminino de Treino">Shorts Feminino de Treino</option>
                   <option value="Kimonos e Faixas de Jiu-Jitsu">Kimonos e Faixas de Jiu-Jitsu (BJJ)</option>
-                  <option value="Rashguards e Camisas de Compressão">Rashguards e Camisas de Compressão (No-Gi)</option>
-                  <option value="Calças Ripstop e Spats de Luta">Calças Ripstop e Spats de Luta</option>
-                  <option value="Shorts Flex-Split e Bermudas de Combate">Shorts Flex-Split e Bermudas de Combate</option>
-                  <option value="Uniformes Personalizados para Academia / Equipe">Uniformes Personalizados para Academia / Equipe</option>
+                  <option value="Shorts de Combate (Muay Thai, MMA, No-Gi)">Shorts de Combate (Muay Thai, MMA, No-Gi)</option>
+                  <option value="Calças Reforçadas e Spats Térmicos">Calças Reforçadas e Spats Térmicos</option>
                 </select>
 
-                <label for="contactMessage">Mensagem / Dúvida sobre Tamanhos ou Pedido *</label>
-                <textarea id="contactMessage" rows="4" placeholder="Descreva sua dúvida, altura/peso para recomendação de tamanho, ou detalhes da encomenda para sua equipe..." required></textarea>
+                <label for="contactMessage">Mensagem / Dúvida sobre Personalização ou Pedido *</label>
+                <textarea id="contactMessage" rows="4" placeholder="Descreva sua dúvida, quantidade desejada, modalidades da sua academia (Jiu-Jitsu, Muay Thai, MMA, etc.) ou pedido de orçamento personalizado..." required></textarea>
 
                 <button type="submit" class="btn btn-primary btn-block contact-whatsapp-submit-btn" style="margin-top: 15px; font-size: 13px; gap: 10px;">
                   <div class="contact-btn-triangle"></div>
@@ -587,8 +692,8 @@
                 <div class="contact-detail-item">
                   <i class="fa-solid fa-location-dot contact-detail-icon"></i>
                   <div>
-                    <strong style="color: var(--color-black); display: block; font-size: 12px; text-transform: uppercase;">Fábrica & Showroom:</strong>
-                    <span style="font-size: 13px; color: var(--color-text-secondary);">Av. Paulista, 1000 - Bela Vista, São Paulo - SP / Marília - SP</span>
+                    <strong style="color: var(--color-black); display: block; font-size: 12px; text-transform: uppercase;">Confecção & Loja Própria:</strong>
+                    <span style="font-size: 13px; color: var(--color-text-secondary);">Marília - SP / Atendimento e Envio para todo o Brasil</span>
                   </div>
                 </div>
 
@@ -603,7 +708,7 @@
                 <div class="contact-detail-item">
                   <i class="fa-brands fa-whatsapp contact-detail-icon" style="color: var(--color-primary);"></i>
                   <div>
-                    <strong style="color: var(--color-black); display: block; font-size: 12px; text-transform: uppercase;">WhatsApp Oficial:</strong>
+                    <strong style="color: var(--color-black); display: block; font-size: 12px; text-transform: uppercase;">WhatsApp Oficial de Confecção:</strong>
                     <a href="https://api.whatsapp.com/send?phone=5511999999999&text=Ol%C3%A1%2C%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20as%20roupas%20da%20Vulkor" target="_blank" style="font-size: 13px; font-weight: 700; color: var(--color-primary);">(11) 99999-9999</a>
                   </div>
                 </div>
@@ -623,7 +728,7 @@
 
       </div><!-- /.container -->
 
-      <!-- 6. FAQ SECTION (100% FULL-WIDTH COM BACKGROUND #D63600 & PATTERN DE TRIÂNGULOS) -->
+      <!-- 7. FAQ SECTION (100% FULL-WIDTH COM BACKGROUND #D63600 & PATTERN DE TRIÂNGULOS) -->
       <section id="faq" class="faq-fullwidth-section">
         <div class="container faq-inner-container">
           <h2 class="faq-section-title">PERGUNTAS FREQUENTES (FAQ)</h2>
@@ -633,74 +738,74 @@
             <div class="faq-item active">
               <div class="faq-item-triangle"></div>
               <button class="faq-question" onclick="app.toggleFaq(this)">
-                <span>1. Como escolher o tamanho ideal do meu Kimono (A0 a A4)?</span>
+                <span>1. Como funciona a personalização e sublimação para academias e equipes?</span>
                 <i class="fa-solid fa-plus faq-icon"></i>
               </button>
               <div class="faq-answer">
-                <p>Nossa tabela de medidas leva em consideração altura e peso corporal:</p>
+                <p>O forte da Vulkor é a confecção própria com tecnologia de sublimação digital em alta resolução. Criamos projetos 100% personalizados com logotipo, cores e identidade da sua academia ou equipe para <strong>Jiu-Jitsu, Muay Thai, Boxe, MMA e Taekwondo</strong>. As estampas penetram diretamente nas fibras dos nossos <strong>tecidos respiráveis, de alta durabilidade e performance</strong> — garantindo cores vivas, toque zero e resistência que não racha nem desbota com as lavagens e treinos intensos.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-item-triangle"></div>
+              <button class="faq-question" onclick="app.toggleFaq(this)">
+                <span>2. Quais os diferenciais de qualidade das Rashguards e Camisetas Vulkor?</span>
+                <i class="fa-solid fa-plus faq-icon"></i>
+              </button>
+              <div class="faq-answer">
+                <p>Nossas peças são desenvolvidas exclusivamente em <strong>tecidos respiráveis, duráveis e altamente flexíveis</strong>. Oferecem controle térmico contínuo, secagem rápida do suor, proteção solar, costuras reforçadas que não machucam a pele e modelagem anatômica confortável que acompanha todos os giros e movimentos do atleta.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-item-triangle"></div>
+              <button class="faq-question" onclick="app.toggleFaq(this)">
+                <span>3. Como é composta a Linha Feminina de combate e treino?</span>
+                <i class="fa-solid fa-plus faq-icon"></i>
+              </button>
+              <div class="faq-answer">
+                <p>Criamos uma linha completa pensada para o corpo da atleta, confeccionada em <strong>tecidos respiráveis de altíssima sustentação e durabilidade com zero transparência</strong>. Inclui: Macaquinhos de compressão contínua, Bodys anatômicos, Camisetas Cropped (manga curta e longa), Shorts de alta mobilidade e Calças Legging com cós anatômico de sustentação firme.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-item-triangle"></div>
+              <button class="faq-question" onclick="app.toggleFaq(this)">
+                <span>4. Os kimonos e calças suportam a intensidade de competições oficiais?</span>
+                <i class="fa-solid fa-plus faq-icon"></i>
+              </button>
+              <div class="faq-answer">
+                <p>Sim! Nossos kimonos e calças são construídos com <strong>tecidos respiráveis de alta durabilidade e densidade estrutural</strong>, atendendo com precisão às normas de espessura de gola vulcanizada, comprimento e resistência exigidas pelas regras da <strong>IBJJF, CBJJ e CBJJE</strong> para competições oficiais de alto rendimento.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-item-triangle"></div>
+              <button class="faq-question" onclick="app.toggleFaq(this)">
+                <span>5. Como escolher o tamanho ideal do meu vestuário ou kimono?</span>
+                <i class="fa-solid fa-plus faq-icon"></i>
+              </button>
+              <div class="faq-answer">
+                <p>Nossa grade de modelagem foi desenvolvida para se ajustar perfeitamente ao biotipo esportivo:</p>
                 <ul>
-                  <li><strong>A0:</strong> 1,55m a 1,65m | 50kg a 62kg</li>
-                  <li><strong>A1:</strong> 1,65m a 1,75m | 63kg a 75kg</li>
-                  <li><strong>A2:</strong> 1,75m a 1,85m | 76kg a 88kg</li>
-                  <li><strong>A3:</strong> 1,85m a 1,93m | 89kg a 102kg</li>
+                  <li><strong>A0 / P:</strong> 1,55m a 1,65m | 50kg a 62kg</li>
+                  <li><strong>A1 / M:</strong> 1,65m a 1,75m | 63kg a 75kg</li>
+                  <li><strong>A2 / G:</strong> 1,75m a 1,85m | 76kg a 88kg</li>
+                  <li><strong>A3 / GG:</strong> 1,85m a 1,93m | 89kg a 102kg</li>
                   <li><strong>A4:</strong> 1,90m a 2,00m | 103kg a 120kg</li>
                 </ul>
-                <p>Se você estiver no limite de peso/altura, nossa equipe de suporte no WhatsApp auxilia na escolha exata para sua compleição física.</p>
+                <p>Caso tenha dúvidas ou queira um ajuste personalizado para sua equipe, nossa consultoria técnica no WhatsApp orienta a escolha exata.</p>
               </div>
             </div>
 
             <div class="faq-item">
               <div class="faq-item-triangle"></div>
               <button class="faq-question" onclick="app.toggleFaq(this)">
-                <span>2. Os kimonos e uniformes da Vulkor são homologados pela IBJJF e CBJJ?</span>
+                <span>6. Quais são as condições de pagamento e prazos de entrega?</span>
                 <i class="fa-solid fa-plus faq-icon"></i>
               </button>
               <div class="faq-answer">
-                <p>Sim! Todos os nossos kimonos Pro Comp atendem rigorosamente às normas de espessura de gola, comprimento de manga, gramatura e dimensões exigidas pelos regulamentos oficiais da <strong>IBJJF, CBJJ, CBJJE</strong> e federações estaduais para competições com kimono e No-Gi.</p>
-              </div>
-            </div>
-
-            <div class="faq-item">
-              <div class="faq-item-triangle"></div>
-              <button class="faq-question" onclick="app.toggleFaq(this)">
-                <span>3. O tecido do kimono encolhe após as primeiras lavagens?</span>
-                <i class="fa-solid fa-plus faq-icon"></i>
-              </button>
-              <div class="faq-answer">
-                <p>Todos os tecidos da Vulkor passam por processo industrial de pré-encolhimento. Lavando com água fria e secando à sombra, o encolhimento residual é de no máximo 1% a 2%, preservando o caimento 0-Radius milimétrico.</p>
-              </div>
-            </div>
-
-            <div class="faq-item">
-              <div class="faq-item-triangle"></div>
-              <button class="faq-question" onclick="app.toggleFaq(this)">
-                <span>4. Qual o diferencial das Rashguards e Shorts No-Gi da Vulkor?</span>
-                <i class="fa-solid fa-plus faq-icon"></i>
-              </button>
-              <div class="faq-answer">
-                <p>Nossas rashguards contam com costuras planas <em>flatlock</em> 4 agulhas anti-atrito, tecnologia AeroDry™ de evaporação instantânea e fita de silicone na cintura que impede a camisa de subir no rola. Os shorts possuem abertura lateral de 12cm e cós sem botões metálicos, garantindo total segurança no tatame.</p>
-              </div>
-            </div>
-
-            <div class="faq-item">
-              <div class="faq-item-triangle"></div>
-              <button class="faq-question" onclick="app.toggleFaq(this)">
-                <span>5. A Vulkor faz uniformes e kimonos personalizados para academias e equipes?</span>
-                <i class="fa-solid fa-plus faq-icon"></i>
-              </button>
-              <div class="faq-answer">
-                <p>Sim! Produzimos lotes sob medida para academias, filiais e equipes competitivas com personalização completa de patches, bordados e cores oficiais da sua escola, com preços especiais e condições exclusivas de atacado.</p>
-              </div>
-            </div>
-
-            <div class="faq-item">
-              <div class="faq-item-triangle"></div>
-              <button class="faq-question" onclick="app.toggleFaq(this)">
-                <span>6. Quais são as formas de pagamento e prazos de entrega?</span>
-                <i class="fa-solid fa-plus faq-icon"></i>
-              </button>
-              <div class="faq-answer">
-                <p>Aceitamos cartão de crédito em até 6x sem juros, desconto especial via PIX e envio para todo o território nacional através dos Correios e transportadoras com código de rastreamento enviado automaticamente.</p>
+                <p>Disponibilizamos pagamento em até 6x sem juros no cartão de crédito, condições especiais via PIX e faturamento facilitado para atacado e academias. Possuímos rigoroso controle de produção e logística, <strong>assegurando pontualidade absoluta na entrega</strong> para todo o Brasil.</p>
               </div>
             </div>
 
@@ -870,8 +975,11 @@
     <i class="fa-brands fa-whatsapp"></i>
   </a>
 
+  <!-- CIRCULO PRETO AO REDOR DO MOUSE -->
+  <div class="cursor-follower" id="cursorFollower" aria-hidden="true"></div>
+
   <!-- Scripts -->
-  <script src="js/data.js?v=2.3"></script>
-  <script src="js/app.js?v=2.3"></script>
+  <script src="js/data.js?v=2.4"></script>
+  <script src="js/app.js?v=2.4"></script>
 </body>
 </html>

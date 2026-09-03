@@ -1,6 +1,6 @@
 # Vulkor Performance
 
-> Fábrica brasileira especializada em kimonos e vestuário de alta performance para artes marciais e esportes de combate (Jiu-Jitsu / BJJ, No-Gi, MMA, Boxe, Taekwondo).
+> Confecção brasileira especializada em sublimação total, personalização para academias e vestuário de alta performance para artes marciais e esportes de combate (Jiu-Jitsu / BJJ, Muay Thai, No-Gi, MMA, Boxe, Taekwondo).
 
 ## Visão Geral
 - **Nome Oficial**: Vulkor Performance
@@ -10,34 +10,27 @@
 - **Telefone / Central**: (11) 3333-4444
 - **WhatsApp Oficial**: (11) 99999-9999
 - **Instagram**: @vulkorperformance (https://instagram.com/vulkorperformance)
-- **Área de Atendimento**: Envio expresso para todo o território nacional (Brasil) e encomendas sob medida para equipes e academias internacionais.
+- **Área de Atendimento**: Envio expresso para todo o território nacional (Brasil) e encomendas sob medida para equipes e academias.
 
-## Pilares de Engenharia & Diferenciais Técnicos
-1. **Modelagem 0-Radius Antipegada**: Corte anatômico milimétrico com ângulos retos e eliminação de sobras de tecido sob as axilas e mangas, neutralizando pegadas dos adversários no tatame.
-2. **Tecido Trançado 450GSM**: Fios 100% algodão pré-encolhido de alta densidade, reforçados com costura tripla balística e resistência à tração superior a 350kgf contra deformações e rasgos.
-3. **Gola EVA Vulcanizada Antimicrobiana**: Núcleo de borracha EVA vulcanizada de alta densidade que não retém suor ou umidade, secando até 4x mais rápido que as golas tradicionais de algodão e prevenindo proliferação de fungos e bactérias.
-4. **Homologação Oficial para Competições**: Todos os kimonos da linha Pro Comp atendem estritamente às normas técnicas e dimensões oficiais da IBJJF (International Brazilian Jiu-Jitsu Federation), CBJJ (Confederação Brasileira de Jiu-Jitsu) e CBJJE.
-5. **Fabricação Própria Nacional**: Controle total da cadeia têxtil com padrões militares de durabilidade e envio direto de fábrica sem intermediários.
+## Pilares de Engenharia & Diferenciais
+1. **Sublimação Digital em Alta Definição**: Tecnologia de estamparia digital onde a tinta penetra na fibra do tecido sem relevo ou toque, imune a rachaduras e desbotamento.
+2. **Tecidos Respiráveis, Duráveis e Flexíveis**: Estruturas têxteis desenvolvidas para máxima dissipação de calor, alta durabilidade e total liberdade de movimentos.
+3. **Personalização Completa para Academias & Equipes**: Desenvolvimento exclusivo com logotipos, cores e identidade visual da sua escola de artes marciais.
+4. **Homologação Oficial para Competições**: Produtos desenvolvidos sob conformidade com federações de artes marciais (IBJJF, CBJJ, CBJJE).
+5. **Fabricação Própria Nacional**: Confecção própria em Marília/SP com rigoroso controle de qualidade e garantia de entrega no prazo combinado.
 
 ## Linhas de Produtos & Vestuário
-- **Kimonos de Jiu-Jitsu (BJJ)**: Modelos Pro Comp 450GSM trançados, tamanhos A0 a A4 (tamanhos masculinos, femininos e infantis sob encomenda), gola vulcanizada, costuras triplas e calças em sarja/ripstop.
-- **Camisas de Compressão & Rashguards (No-Gi)**: Tecido elástico AeroDry™ 4-way stretch com costuras planas flatlock 4 agulhas anti-assadura e fita de silicone na cintura.
-- **Calças Ripstop & Spats de Luta**: Tecido quadriculado anti-rasgo com reforço Diamond Crotch de 180° para mobilidade irrestrita de guarda e passagens.
-- **Shorts de Combate & Bermudas Flex-Split**: Abertura lateral de 12cm, cós duplo de ajuste anatômico sem botões metálicos, específicos para MMA e grappling No-Gi.
-- **Uniformes Personalizados**: Confecção personalizada para equipes, filiais e academias com bordados computadorizados e sublimação de alta resolução.
-
-## Perguntas Frequentes (FAQ)
-- **Tamanhos de Kimonos**:
-  - A0: 1,55m a 1,65m | 50kg a 62kg
-  - A1: 1,65m a 1,75m | 63kg a 75kg
-  - A2: 1,75m a 1,85m | 76kg a 88kg
-  - A3: 1,85m a 1,93m | 89kg a 102kg
-  - A4: 1,90m a 2,00m | 103kg a 120kg
-- **Encolhimento**: Todos os tecidos passam por pré-encolhimento industrial; o encolhimento residual com lavagem a frio é de apenas 1% a 2%.
-- **Formas de Pagamento**: Cartão de crédito em até 6x sem juros, PIX com desconto à vista e faturamento para academias.
+- **Rashguards (Manga Curta e Manga Longa)**: Tecidos respiráveis e flexíveis com proteção solar, costuras macias anti-atrito e sublimação total.
+- **Camisetas Técnicas e Casuais**: Modelagem anatômica confortável para treino, preparação física e uso casual de equipes.
+- **Linha Feminina Completa**: Macacãozinho, Body, Camisetas Cropped (manga curta e longa), Shorts e Calças Legging de alta sustentação e zero transparência.
+- **Kimonos de Jiu-Jitsu (BJJ)**: Modelagem anatômica resistente com corte ajustado e gola emborrachada antimicrobiana.
+- **Shorts & Bermudas de Combate**: Abertura lateral e painel flexível para chutes altos de Muay Thai e movimentação de solo No-Gi.
+- **Calças Reforçadas & Spats Térmicos**: Trama anti-rasgo com reforço duplo nos joelhos e compressão muscular contínua.
 
 ## Links Rápidos
 - [Produtos de Combate](https://vulkorperformance.com.br/#categorias)
+- [Sublimação e Personalização](https://vulkorperformance.com.br/#sublimacao)
+- [Fale Conosco no WhatsApp](https://api.whatsapp.com/send?phone=5511999999999)
 - [Por que usar Vulkor? / Benefícios](https://vulkorperformance.com.br/#beneficios)
 - [Sobre a Empresa](https://vulkorperformance.com.br/#sobre)
 - [Depoimentos de Atletas](https://vulkorperformance.com.br/#depoimentos)

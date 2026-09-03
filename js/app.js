@@ -23,6 +23,7 @@ class VulkorApp {
     this.updateCartUI();
     this.initTestimonialsCarousel();
     this.initScrollAnimations();
+    this.initCustomCursor();
 
     // Routing by URL Hash
     this.handleHashChange();
@@ -84,7 +85,7 @@ class VulkorApp {
     setTimeout(() => {
       const target = document.getElementById(sectionId);
       if (target) {
-        const headerOffset = 90;
+        const headerOffset = 30;
         const elementPosition = target.getBoundingClientRect().top;
         const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
@@ -103,6 +104,7 @@ class VulkorApp {
 
   updateNavLinks(activeSection) {
     const links = document.querySelectorAll('.nav-links a');
+    if (!links || links.length === 0) return;
     links.forEach(link => {
       const href = link.getAttribute('href');
       if (href === `#${activeSection}` || (activeSection === 'home' && href === '#home')) {
@@ -114,17 +116,22 @@ class VulkorApp {
   }
 
   // ==========================================
-  // RENDER MODALITIES (FULL-IMAGE CARDS WITH TEXT ONLY & WHITE TRIANGLE)
+  // RENDER MODALITIES (SINGLE IMAGE WITH 'SUA PERSONALIZAÇÃO AQUI' BADGE)
   // ==========================================
   renderModalities() {
     const container = document.getElementById('modalitiesCategoryGrid');
     if (!container) return;
 
     container.innerHTML = VULKOR_DATA.modalities.map(mod => `
-      <div class="category-item-fullimage" onclick="app.showModalityDetails('${mod.id}', event)">
+      <div class="category-item-fullimage" data-mod-id="${mod.id}" onclick="app.showModalityDetails('${mod.id}', event)">
         <div class="category-card-triangle"></div>
-        <img src="${mod.featuredImage}" alt="${mod.cardTitle || mod.name}" class="category-fullimage-bg" loading="lazy">
+        
+        <!-- Main Image with Printed Customization -->
+        <img src="${mod.featuredImage}" alt="${mod.name}" class="category-fullimage-bg" loading="lazy">
+
+        <!-- Bottom Overlay with Title and Tag -->
         <div class="category-fullimage-overlay">
+          <span class="category-fullimage-tag">${mod.tag}</span>
           <span class="category-fullimage-title">${mod.cardTitle || mod.name}</span>
         </div>
       </div>
@@ -179,22 +186,6 @@ class VulkorApp {
                 ${modality.tagline}
               </p>
               <p class="details-desc-text">${modality.description}</p>
-
-              <!-- Technical Specs Grid -->
-              <div class="details-specs-grid">
-                <div class="details-spec-item">
-                  <label>Material & Trama</label>
-                  <strong>${modality.stats.material || modality.stats.padding || "Mil-Spec"}</strong>
-                </div>
-                <div class="details-spec-item">
-                  <label>Homologação</label>
-                  <strong>${modality.stats.homologation}</strong>
-                </div>
-                <div class="details-spec-item">
-                  <label>Proteção</label>
-                  <strong>${modality.stats.reinforcedSeams || modality.stats.wristProtection || modality.stats.mobility || "Trava Anatômica"}</strong>
-                </div>
-              </div>
             </div>
 
             <div class="details-hero-img">
@@ -204,13 +195,13 @@ class VulkorApp {
 
           <!-- Deep-Dive Article & Size Table -->
           <section class="details-engineering-section">
-            <h2 class="details-section-heading">Engenharia Aplicada ao ${modality.name}</h2>
+            <h2 class="details-section-heading">Qualidade e Construção // ${modality.name}</h2>
             <div class="details-engineering-grid">
               <div class="details-article-col">
                 <h3>${modality.article.title}</h3>
                 ${modality.article.paragraphs.map(p => `<p>${p}</p>`).join('')}
 
-                <h3 style="margin-top: 25px;">Diferenciais de Construção:</h3>
+                <h3 style="margin-top: 25px;">Diferenciais de Qualidade:</h3>
                 <ul class="details-diff-list">
                   ${modality.article.bulletPoints.map(bp => `<li><strong>${bp}</strong></li>`).join('')}
                 </ul>
@@ -218,7 +209,7 @@ class VulkorApp {
 
               <!-- Size Table (Design System Spec) -->
               <div class="details-sizetable-box">
-                <h3>Tabela Oficial de Tamanhos</h3>
+                <h3>Tabela de Tamanhos</h3>
                 <p style="font-size: 12px; margin-bottom: 10px;">Consulte as medidas para escolha ideal do vestuário:</p>
 
                 <div class="table-responsive-wrapper">
@@ -245,21 +236,15 @@ class VulkorApp {
             </div>
           </section>
 
-          <!-- Modality Catalog -->
-          <section class="details-catalog-section">
-            <h2 class="details-section-heading">Coleção de Roupas & Vestuário de ${modality.name}</h2>
-            <p style="font-size: 13px; color: var(--color-text-secondary); margin-bottom: 20px;">Peças técnicas fabricadas pela Vulkor sob o padrão 0-Radius:</p>
-
-            <div class="products-grid">
-              ${modalityProducts.map(p => this.renderProductItemHTML(p)).join('')}
-            </div>
-          </section>
-
-          <!-- Bottom Navigation CTA -->
-          <div class="details-bottom-cta">
-            <button class="btn btn-primary btn-lg" onclick="app.showHome(event)">
+          <!-- Bottom Navigation & WhatsApp CTA -->
+          <div class="details-bottom-cta" style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+            <a href="https://api.whatsapp.com/send?phone=5511999999999&text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20para%20personalizar%20${encodeURIComponent(modality.name)}" target="_blank" class="btn btn-primary btn-lg">
               <div class="btn-corner-triangle"></div>
-              <i class="fa-solid fa-arrow-left"></i> Voltar e Ver Todas as Modalidades
+              <i class="fa-brands fa-whatsapp"></i> Solicitar Orçamento Personalizado
+            </a>
+            <button class="btn btn-secondary btn-lg" onclick="app.showHome(event)">
+              <div class="btn-corner-triangle"></div>
+              <i class="fa-solid fa-arrow-left"></i> Voltar para a Página Principal
             </button>
           </div>
         </div>
@@ -346,10 +331,19 @@ class VulkorApp {
     const modalBody = document.getElementById('modalProductBody');
     const modal = document.getElementById('productModal');
 
+    const images = product.images && product.images.length > 0 ? product.images : [product.image];
+
     modalBody.innerHTML = `
       <div class="modal-product-layout">
         <div class="modal-product-img-box">
-          <img src="${product.image}" alt="${product.name}">
+          <img src="${images[0]}" alt="${product.name}" id="modalMainProductImg">
+          ${images.length > 1 ? `
+            <div style="display: flex; gap: 8px; margin-top: 10px; justify-content: center;">
+              ${images.map((img, idx) => `
+                <img src="${img}" style="width: 50px; height: 50px; object-fit: cover; border: 2px solid ${idx === 0 ? 'var(--color-primary)' : 'var(--border-color)'}; cursor: pointer;" onclick="document.getElementById('modalMainProductImg').src='${img}'; this.parentElement.querySelectorAll('img').forEach(i => i.style.borderColor='var(--border-color)'); this.style.borderColor='var(--color-primary)';">
+              `).join('')}
+            </div>
+          ` : ''}
         </div>
 
         <div class="modal-product-details">
@@ -908,6 +902,76 @@ class VulkorApp {
       // Fallback if IntersectionObserver is not available
       elementsToAnimate.forEach(el => el.classList.add('revealed'));
     }
+  }
+
+  // ==========================================
+  // CIRCULO PRETO AO REDOR DO MOUSE (CURSOR FOLLOWER - SOMENTE DESKTOP)
+  // ==========================================
+  initCustomCursor() {
+    const follower = document.getElementById('cursorFollower');
+    if (!follower) return;
+
+    // Check if device is desktop with fine pointer and hover capability
+    const isDesktop = () => window.matchMedia('(min-width: 992px) and (hover: hover) and (pointer: fine)').matches;
+    if (!isDesktop()) return;
+
+    let mouseX = -100;
+    let mouseY = -100;
+    let followerX = -100;
+    let followerY = -100;
+    let isMoving = false;
+
+    window.addEventListener('mousemove', (e) => {
+      if (!isDesktop()) {
+        follower.classList.remove('active', 'hovering');
+        return;
+      }
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      if (!isMoving) {
+        followerX = mouseX;
+        followerY = mouseY;
+        follower.classList.add('active');
+        isMoving = true;
+      }
+    }, { passive: true });
+
+    document.addEventListener('mouseleave', () => {
+      follower.classList.remove('active');
+    });
+
+    document.addEventListener('mouseenter', () => {
+      if (isDesktop()) {
+        follower.classList.add('active');
+      }
+    });
+
+    // Detect hover over interactive elements
+    const interactiveSelectors = 'a, button, input, select, textarea, .category-item-fullimage, .sublimation-stage, .benefit-card, .faq-question, .t-dot, .testimonial-ref-card';
+    document.addEventListener('mouseover', (e) => {
+      if (!isDesktop()) return;
+      if (e.target.closest && e.target.closest(interactiveSelectors)) {
+        follower.classList.add('hovering');
+      }
+    }, { passive: true });
+
+    document.addEventListener('mouseout', (e) => {
+      if (!isDesktop()) return;
+      if (e.target.closest && e.target.closest(interactiveSelectors)) {
+        follower.classList.remove('hovering');
+      }
+    }, { passive: true });
+
+    // Smooth animation loop using lerp
+    const animateCursor = () => {
+      if (isMoving && isDesktop()) {
+        followerX += (mouseX - followerX) * 0.22;
+        followerY += (mouseY - followerY) * 0.22;
+        follower.style.transform = `translate3d(${followerX}px, ${followerY}px, 0) translate(-50%, -50%)`;
+      }
+      requestAnimationFrame(animateCursor);
+    };
+    requestAnimationFrame(animateCursor);
   }
 }
 
