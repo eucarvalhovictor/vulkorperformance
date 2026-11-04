@@ -1271,9 +1271,15 @@ tr:nth-child(even) {
 }
 
 .products-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+}
+
+/* Cards em imagem em larga escala: 3 colunas no desktop */
+.products-grid > .category-item-fullimage {
+  flex: 0 0 calc((100% - 48px) / 3);
 }
 
 .product-item {
@@ -1397,6 +1403,70 @@ tr:nth-child(even) {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 8px;
+}
+
+/* ==========================================================================
+   SEÇÕES DE PÚBLICO NA HOME (MASCULINO / FEMININO / INFANTIL)
+   ========================================================================== */
+.audience-block {
+  margin-bottom: 45px;
+}
+
+.audience-block:last-child {
+  margin-bottom: 0;
+}
+
+.audience-block-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  font-family: var(--font-family);
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--color-black);
+  margin-bottom: 22px;
+}
+
+.audience-block-title::before,
+.audience-block-title::after {
+  content: "";
+  flex: 1 1 auto;
+  max-width: 130px;
+  height: 2px;
+  background-color: var(--color-black);
+}
+
+/* Card de produto na home: apenas imagem em larga escala + nome */
+.product-card {
+  cursor: pointer;
+}
+
+.product-card:focus-visible {
+  outline: 3px solid var(--color-black);
+  outline-offset: 3px;
+}
+
+.product-card-title {
+  font-size: 17px;
+  line-height: 1.35;
+  letter-spacing: 1px;
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .audience-block-title {
+    font-size: 15px;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+
+  .audience-block-title::before,
+  .audience-block-title::after {
+    max-width: 50px;
+  }
 }
 
 /* ==========================================================================
@@ -3052,8 +3122,11 @@ html, body {
   }
 
   .products-grid {
-    grid-template-columns: repeat(2, 1fr);
     gap: 16px;
+  }
+
+  .products-grid > .category-item-fullimage {
+    flex-basis: calc((100% - 16px) / 2);
   }
 
   .about-main-black-card {
@@ -3689,8 +3762,11 @@ html, body {
 
   /* PRODUCTS GRID ON MOBILE */
   .products-grid {
-    grid-template-columns: 1fr !important;
     gap: 16px !important;
+  }
+
+  .products-grid > .category-item-fullimage {
+    flex-basis: 100% !important;
   }
 
   .product-item {

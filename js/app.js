@@ -8,7 +8,6 @@ class VulkorApp {
     this.cart = [];
     this.currentCoupon = null;
     this.currentDiscountPercent = 0;
-    this.activeFilter = 'all';
     this.activeModality = null;
     this.currentTestimonialIndex = 0;
     this.totalTestimonials = 4;
@@ -18,8 +17,7 @@ class VulkorApp {
 
   init() {
     this.loadCartFromStorage();
-    this.renderModalities();
-    this.renderProducts();
+    this.renderHomeProducts();
     this.updateCartUI();
     this.initTestimonialsCarousel();
     this.initScrollAnimations();
@@ -116,31 +114,6 @@ class VulkorApp {
   }
 
   // ==========================================
-  // RENDER MODALITIES (SINGLE IMAGE WITH 'SUA PERSONALIZAÇÃO AQUI' BADGE)
-  // ==========================================
-  renderModalities() {
-    const container = document.getElementById('modalitiesCategoryGrid');
-    if (!container) return;
-
-    container.innerHTML = VULKOR_DATA.modalities.map(mod => `
-      <div class="category-item-fullimage" data-mod-id="${mod.id}" onclick="app.showModalityDetails('${mod.id}', event)">
-        <div class="category-card-triangle"></div>
-        
-        <!-- Main Image with Printed Customization -->
-        <img src="${mod.featuredImage}" alt="${mod.name}" class="category-fullimage-bg" loading="lazy">
-
-        <!-- Bottom Overlay with Title and Tag -->
-        <div class="category-fullimage-overlay">
-          <span class="category-fullimage-tag">${mod.tag}</span>
-          <span class="category-fullimage-title">${mod.cardTitle || mod.name}</span>
-        </div>
-      </div>
-    `).join('');
-
-    setTimeout(() => this.initScrollAnimations(), 40);
-  }
-
-  // ==========================================
   // MODALITY DETAILS VIEW
   // ==========================================
   showModalityDetails(modalityId, event) {
@@ -161,8 +134,6 @@ class VulkorApp {
     if (homeView) homeView.style.display = 'none';
     if (detailsView) {
       detailsView.style.display = 'block';
-
-      const modalityProducts = VULKOR_DATA.products.filter(p => p.modality === modality.id);
 
       detailsView.innerHTML = `
         <div class="container details-view-container">
@@ -256,66 +227,35 @@ class VulkorApp {
   }
 
   // ==========================================
-  // PRODUCTS RENDERING & FILTERS
+  // HOME PRODUCTS (MASCULINO / FEMININO / INFANTIL)
   // ==========================================
-  renderProducts() {
-    const container = document.getElementById('productsCatalogGrid');
-    if (!container) return;
+  renderHomeProducts() {
+    const audiences = ['masculino', 'feminino', 'infantil'];
 
-    let filtered = VULKOR_DATA.products;
-    if (this.activeFilter !== 'all') {
-      filtered = VULKOR_DATA.products.filter(p => p.modality === this.activeFilter);
-    }
+    audiences.forEach(audience => {
+      const containerId = `productsGrid${audience.charAt(0).toUpperCase()}${audience.slice(1)}`;
+      const container = document.getElementById(containerId);
+      if (!container) return;
 
-    container.innerHTML = filtered.map(p => this.renderProductItemHTML(p)).join('');
+      const items = VULKOR_DATA.products.filter(p => p.audience === audience);
+      container.innerHTML = items.map(p => this.renderProductItemHTML(p)).join('');
+    });
+
     setTimeout(() => this.initScrollAnimations(), 40);
   }
 
-  filterProducts(category) {
-    this.activeFilter = category;
-
-    const filterTabs = document.querySelectorAll('.filter-tab');
-    filterTabs.forEach(tab => {
-      if (tab.getAttribute('data-cat') === category) {
-        tab.classList.add('active');
-      } else {
-        tab.classList.remove('active');
-      }
-    });
-
-    this.renderProducts();
-  }
-
+  // Card de produto na home: imagem em larga escala, sem preço, botões ou tags.
+  // Clique (ou Enter) em qualquer ponto do card abre o modal de detalhes.
   renderProductItemHTML(product) {
     return `
-      <div class="product-item">
-        <div class="product-item-triangle"></div>
-        <div class="product-image">
-          <img src="${product.image}" alt="${product.name}" loading="lazy">
-          <span class="product-tag">${product.techBadge}</span>
-        </div>
-        <div class="product-info">
-          <span class="product-sport-label">${product.modalityLabel}</span>
-          <h4 class="product-name">${product.name}</h4>
-          <p class="product-desc-snippet">${product.description.substring(0, 80)}...</p>
-          
-          <div class="product-price-box">
-            <div>
-              <div class="product-price-val">R$ ${product.price.toFixed(2).replace('.', ',')}</div>
-              <div class="product-installments">${product.installments}</div>
-            </div>
-            
-            <div class="product-actions">
-              <button class="btn btn-outline btn-sm" onclick="app.openProductModal('${product.id}')">
-                <div class="btn-corner-triangle"></div>
-                Detalhes
-              </button>
-              <button class="btn btn-primary btn-sm" onclick="app.addToCart('${product.id}')">
-                <div class="btn-corner-triangle"></div>
-                Comprar
-              </button>
-            </div>
-          </div>
+      <div class="category-item-fullimage product-card" role="button" tabindex="0"
+           aria-label="Ver detalhes de ${product.name}"
+           onclick="app.openProductModal('${product.id}')"
+           onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();app.openProductModal('${product.id}');}">
+        <div class="category-card-triangle"></div>
+        <img src="${product.image}" alt="${product.name}" class="category-fullimage-bg" loading="lazy">
+        <div class="category-fullimage-overlay">
+          <span class="category-fullimage-title product-card-title">${product.name}</span>
         </div>
       </div>
     `;
@@ -521,7 +461,7 @@ class VulkorApp {
       itemsContainer.innerHTML = `
         <div style="text-align: center; padding: 40px 10px; color: var(--color-text-muted);">
           <p style="font-size: 14px; font-weight: 700; color: #000;">SEU ARSENAL ESTÁ VAZIO</p>
-          <p style="font-size: 12px;">Selecione kimonos, luvas de boxe, doboks ou shorts de MMA.</p>
+          <p style="font-size: 12px;">Selecione rashguards, camisetas, baby looks, bodies, shorts ou leggings.</p>
         </div>
       `;
       if (subtotalText) subtotalText.textContent = 'R$ 0,00';
@@ -589,7 +529,13 @@ class VulkorApp {
   loadCartFromStorage() {
     try {
       const saved = localStorage.getItem('vulkor_cart');
-      if (saved) this.cart = JSON.parse(saved);
+      if (saved) {
+        const stored = JSON.parse(saved);
+        // Descarta do carrinho itens de produtos que não existem mais na base
+        this.cart = Array.isArray(stored)
+          ? stored.filter(i => i && i.product && VULKOR_DATA.products.some(p => p.id === i.product.id))
+          : [];
+      }
     } catch (e) {
       this.cart = [];
     }
@@ -853,7 +799,7 @@ class VulkorApp {
 
     // Scroll-triggered Elements
     const elementsToAnimate = document.querySelectorAll(
-      '.products-combat-title, .category-item-fullimage, .benefits-section-title, .benefit-card, .tactical-marquee-wrapper, .about-vertical-column, .about-main-black-card, .testimonials-ref-title, .testimonials-ref-carousel, .testimonials-dots, .testimonials-ref-cta, .contact-box-title, .contact-form-box, .contact-info-box, .faq-title, .faq-item, .product-item, .details-hero-box, .details-engineering-section, .details-catalog-section, .details-bottom-cta'
+      '.products-combat-title, .audience-block-title, .category-item-fullimage, .benefits-section-title, .benefit-card, .tactical-marquee-wrapper, .about-vertical-column, .about-main-black-card, .testimonials-ref-title, .testimonials-ref-carousel, .testimonials-dots, .testimonials-ref-cta, .contact-box-title, .contact-form-box, .contact-info-box, .faq-title, .faq-item, .product-item, .details-hero-box, .details-engineering-section, .details-catalog-section, .details-bottom-cta'
     );
 
     if (elementsToAnimate.length === 0) return;

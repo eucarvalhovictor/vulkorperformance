@@ -76,8 +76,8 @@ const VULKOR_DATA = {
       cardTitle: "Camisetas",
       tag: "ALTA DURABILIDADE & PERFORMANCE",
       number: "02",
-      tagline: "Camisetas Técnicas de Treino e Casual — Lisas, Estampas da Marca e Personalizadas",
-      description: "Camisetas confeccionadas com alto padrão de qualidade em tecidos respiráveis, de alta durabilidade e flexibilidade. Perfeitas para treino, preparação física, uniformização de equipes e uso casual com identidade marcial.",
+      tagline: "Camisetas e Baby Looks — Lisas, Estampas da Marca e Personalizadas",
+      description: "Camisetas em modelagem tradicional e baby look (manga curta e manga longa) confeccionadas com alto padrão de qualidade em tecidos respiráveis, de alta durabilidade e flexibilidade. Perfeitas para treino, preparação física, uniformização de equipes e uso casual com identidade marcial.",
       heroImage: "public/camiseta_personalizada.jpg",
       featuredImage: "public/camiseta_personalizada.jpg",
       images: [
@@ -108,55 +108,14 @@ const VULKOR_DATA = {
         { size: "G", height: "1,78m a 1,88m", weight: "80kg a 94kg" },
         { size: "GG", height: "1,85m a 1,98m", weight: "+94kg" }
       ],
-      gearHighlights: ["Camiseta Striker Respirável", "Camiseta Casual Vulkor", "Camiseta Sublimada Equipe", "Regata Tática de Treino"]
-    },
-    {
-      id: "kimonos",
-      name: "Kimonos",
-      cardTitle: "Kimonos",
-      tag: "BJJ & KIMONOS",
-      number: "03",
-      tagline: "Kimonos Reforçados de Alta Durabilidade para Jiu-Jitsu",
-      description: "Kimonos de alta resistência para Jiu-Jitsu com corte anatômico e ajuste perfeito sem sobras de pano para dificultar as pegadas adversárias no tatame. Gola emborrachada vulcanizada antimicrobiana e tecido reforçado pré-encolhido.",
-      heroImage: "public/kimono_personalizado.jpg",
-      featuredImage: "public/kimono_personalizado.jpg",
-      images: [
-        { url: "public/kimono_personalizado.jpg", label: "Sua Personalização Aqui", desc: "Kimono personalizado com patches e bordados da sua equipe" }
-      ],
-      stats: {
-        material: "Tecido Reforçado Pré-Encolhido",
-        homologation: "Homologado para Competições Oficiais",
-        reinforcedSeams: "Costura Tripla Reforçada",
-        warranty: "Garantia de Confecção Própria Vulkor"
-      },
-      article: {
-        title: "Confecção Reforçada para o Jiu-Jitsu",
-        paragraphs: [
-          "O Jiu-Jitsu exige vestuário que acompanhe cada transição de guarda, raspagem e finalização sem prender movimentos. O corte ergonômico Vulkor elimina pontos de folga na gola e axilas, tornando a pegada do adversário substancialmente mais difícil.",
-          "Nossa tecnologia de gola com núcleo emborrachado antimicrobiano seca rapidamente, prevenindo o acúmulo de odores e umidade típicos de treinos intensos."
-        ],
-        bulletPoints: [
-          "Gola emborrachada resistente a deformações",
-          "Calça em tecido reforçado com dupla camada nos joelhos",
-          "Bordas confortáveis com acabamento de precisão",
-          "Kimonos pré-encolhidos com padrão oficial de competição"
-        ]
-      },
-      sizeChart: [
-        { size: "A0", height: "1,55m a 1,65m", weight: "50kg a 62kg" },
-        { size: "A1", height: "1,65m a 1,75m", weight: "63kg a 75kg" },
-        { size: "A2", height: "1,75m a 1,85m", weight: "76kg a 88kg" },
-        { size: "A3", height: "1,85m a 1,93m", weight: "89kg a 102kg" },
-        { size: "A4", height: "1,90m a 2,00m", weight: "103kg a 120kg" }
-      ],
-      gearHighlights: ["Kimono Pro Comp Reforçado", "Kimono Light Training", "Faixas de Graduação Reforçadas", "Kimono Personalizado Equipe"]
+      gearHighlights: ["Camiseta Striker Respirável", "Baby Look Manga Curta", "Baby Look Manga Longa", "Camiseta Sublimada Equipe"]
     },
     {
       id: "shorts",
       name: "Shorts de Combate",
       cardTitle: "Shorts de Combate",
       tag: "MUAY THAI, MMA & NO-GI",
-      number: "04",
+      number: "03",
       tagline: "Shorts e Bermudas de Luta com Alta Mobilidade e Flexibilidade",
       description: "Shorts desenvolvidos para Muay Thai, No-Gi Jiu-Jitsu, MMA e treinos em geral. Fendas laterais estratégicas, cós anatômico sem botões e painel elástico entrepernas que libera total amplitude para chutes altos e movimentos rápidos sem prender o quadril.",
       heroImage: "public/shorts_personalizado.jpg",
@@ -195,91 +154,50 @@ const VULKOR_DATA = {
       id: "calcas",
       name: "Calças & Leggings",
       cardTitle: "Calças & Leggings",
-      tag: "CALÇAS REFORÇADAS & SPATS",
-      number: "05",
-      tagline: "Calças Reforçadas de Kimono, Leggings e Spats de Compressão",
-      description: "Calças avulsas em tecido reforçado anti-rasgo com proteção acolchoada nos joelhos, calças legging femininas de alta densidade e spats térmicos para treinos de luta, proporcionando conforto contínuo e proteção da pele.",
+      tag: "LEGGINGS DE COMPRESSÃO & ALTA SUSTENTAÇÃO",
+      number: "04",
+      tagline: "Calças Legging Masculinas e Femininas — Alta Sustentação e Zero Transparência",
+      description: "Calças legging masculinas e femininas em tecido respirável de alta densidade e compressão. Ajuste anatômico firme que não enrola nem deforma, cintura com alta sustentação e versões femininas comprovadamente sem transparência. Ideais para treinos de luta, funcional, musculação e uso diário.",
       heroImage: "public/calca_personalizada.jpg",
       featuredImage: "public/calca_personalizada.jpg",
       images: [
-        { url: "public/calca_personalizada.jpg", label: "Sua Personalização Aqui", desc: "Calças reforçadas e leggings com sua marca" }
+        { url: "public/calca_personalizada.jpg", label: "Sua Personalização Aqui", desc: "Calças legging com sua marca e cores" }
       ],
       stats: {
-        material: "Tecidos Reforçados e de Compressão",
-        homologation: "Regulamentos Oficiais de Luta",
-        reinforcedSeams: "Reforço Duplo e Costuras Reforçadas",
-        sublimation: "Tratamento Confortável e Proteção Solar"
+        material: "Tecidos Respiráveis de Alta Compressão",
+        homologation: "Ajuste Anatômico que Não Enrola",
+        reinforcedSeams: "Costuras Macias Anti-Atrito",
+        sublimation: "Sublimação Total em Alta Definição"
       },
       article: {
-        title: "Durabilidade, Resistência e Mobilidade",
+        title: "Compressão, Conforto e Mobilidade",
         paragraphs: [
-          "As calças de treino sofrem atrito intenso nos joelhos e virilha durante movimentações e quedas. O tecido reforçado da Vulkor é resistente a furos e tração contínua.",
-          "O sistema de passadores com cordão firme garante ajuste seguro que não desata durante os treinos."
+          "A calça legging Vulkor acompanha cada movimento sem prender o quadril: o tecido respirável de alta densidade mantém a regulação térmica e a elasticidade multidirecional durante agachamentos, transições no solo e corridas.",
+          "A cintura com alta sustentação permanece no lugar sem desabar, enquanto as costuras macias evitam atrito e irritação na pele durante treinos intensos."
         ],
         bulletPoints: [
-          "Reforço duplo de tecido acolchoado nos joelhos",
-          "Costuras reforçadas nos pontos de tração",
-          "Tecido reforçado com trama anti-rasgo",
-          "Spats de compressão anatômicos que auxiliam na circulação"
+          "Tecido respirável de alta densidade com proteção solar",
+          "Cintura de alta sustentação que não desaba nem aperta",
+          "Versões femininas comprovadamente sem transparência",
+          "Costuras macias reforçadas que não machucam a pele"
         ]
       },
       sizeChart: [
-        { size: "A0 / P", height: "1,55m a 1,65m", weight: "50kg a 62kg" },
-        { size: "A1 / M", height: "1,65m a 1,75m", weight: "63kg a 75kg" },
-        { size: "A2 / G", height: "1,75m a 1,85m", weight: "76kg a 88kg" },
-        { size: "A3 / GG", height: "1,85m a 1,93m", weight: "89kg a 102kg" },
-        { size: "A4", height: "1,90m a 2,00m", weight: "103kg a 120kg" }
+        { size: "P", height: "1,60m a 1,70m", weight: "55kg a 68kg" },
+        { size: "M", height: "1,70m a 1,80m", weight: "68kg a 80kg" },
+        { size: "G", height: "1,78m a 1,88m", weight: "80kg a 94kg" },
+        { size: "GG", height: "1,85m a 1,98m", weight: "+94kg" }
       ],
-      gearHighlights: ["Calça de Kimono Reforçada", "Calça Legging Alta Sustentação", "Spats de Compressão", "Spats Personalizado Equipe"]
-    },
-    {
-      id: "macaquinho",
-      name: "Macaquinho",
-      cardTitle: "Macaquinho",
-      tag: "FITNESS & COMBATE FEMININO",
-      number: "06",
-      tagline: "Macaquinho de Compressão Anatômico — Lisos e 100% Personalizados",
-      description: "Macaquinho feminino inteiriço desenvolvido para treinos de alta intensidade, lutas e preparação física. Modelagem anatômica que abraça o corpo com sustentação superior, zero transparência e bolso funcional para celular.",
-      heroImage: "public/macaquinho_personalizado.jpg",
-      featuredImage: "public/macaquinho_personalizado.jpg",
-      images: [
-        { url: "public/macaquinho_personalizado.jpg", label: "Sua Personalização Aqui", desc: "Macaquinho personalizado para sua academia ou equipe" }
-      ],
-      stats: {
-        material: "Tecidos Flexíveis de Alta Densidade",
-        homologation: "Zero Transparência & Suporte Anatômico",
-        reinforcedSeams: "Costura Reforçada Anti-Atrito",
-        sublimation: "Sublimação Total e Estampas Exclusivas"
-      },
-      article: {
-        title: "Alta Sustentação, Conforto e Zero Transparência",
-        paragraphs: [
-          "O macaquinho feminino Vulkor foi projetado para oferecer ajuste perfeito ao corpo, garantindo compressão confortável que não enrola na coxa nem limita a mobilidade.",
-          "Com bolso lateral funcional e confecção em tecido respirável de alta densidade, proporciona total segurança em agachamentos, flexões e movimentos de combate."
-        ],
-        bulletPoints: [
-          "Modelagem inteiriça anatômica com suporte no busto",
-          "Bolso lateral utilitário de fácil acesso",
-          "Tecido de alta densidade comprovadamente sem transparência",
-          "Opções lisas ou 100% personalizadas com a marca da sua academia"
-        ]
-      },
-      sizeChart: [
-        { size: "PP / 34-36", height: "1,50m a 1,60m", weight: "45kg a 53kg" },
-        { size: "P / 38", height: "1,58m a 1,68m", weight: "54kg a 62kg" },
-        { size: "M / 40", height: "1,65m a 1,74m", weight: "63kg a 72kg" },
-        { size: "G / 42-44", height: "1,70m a 1,80m", weight: "73kg a 85kg" }
-      ],
-      gearHighlights: ["Macaquinho Fight & Fitness", "Macaquinho Anatômico Pro", "Macaquinho Personalizado Equipe"]
+      gearHighlights: ["Calça Legging Masculina", "Calça Legging Feminina", "Alta Sustentação & Zero Transparência", "Legging Personalizada Equipe"]
     },
     {
       id: "body",
       name: "Body",
       cardTitle: "Body",
       tag: "SUSTENTAÇÃO & CONFORTO",
-      number: "07",
-      tagline: "Body Feminino Anatômico — Lisos e 100% Personalizados",
-      description: "Body fitness e combate de alta performance. Ajuste anatômico firme que modela a silhueta, sustentação reforçada no busto e tecido flexível respirável para máxima liberdade de movimentos.",
+      number: "05",
+      tagline: "Body No-Gi Feminino de Manga Curta e Manga Longa — Lisos e 100% Personalizados",
+      description: "Body no-gi feminino de manga curta e manga longa de alta performance. Ajuste anatômico firme que modela a silhueta, sustentação reforçada no busto e tecido flexível respirável para máxima liberdade de movimentos no tatame e na musculação.",
       heroImage: "public/body_personalizado.jpg",
       featuredImage: "public/body_personalizado.jpg",
       images: [
@@ -310,54 +228,14 @@ const VULKOR_DATA = {
         { size: "M / 40", height: "1,65m a 1,74m", weight: "63kg a 72kg" },
         { size: "G / 42-44", height: "1,70m a 1,80m", weight: "73kg a 85kg" }
       ],
-      gearHighlights: ["Body Anatômico Vulkor", "Body Fitness Combat", "Body Personalizado Equipe"]
-    },
-    {
-      id: "cropped",
-      name: "Cropped",
-      cardTitle: "Cropped",
-      tag: "MANGA CURTA & LONGA",
-      number: "08",
-      tagline: "Camisetas Cropped Femininas — Lisas e 100% Personalizadas",
-      description: "Camisetas Cropped femininas desenvolvidas para aquecimento, treino e uso diário de atletas. Disponíveis em manga curta e manga longa, com toque macio, corte moderno e estampa personalizada.",
-      heroImage: "public/cropped_personalizado.jpg",
-      featuredImage: "public/cropped_personalizado.jpg",
-      images: [
-        { url: "public/cropped_personalizado.jpg", label: "Sua Personalização Aqui", desc: "Cropped personalizado com a sua estampa" }
-      ],
-      stats: {
-        material: "Tecidos Leves, Respiráveis e Flexíveis",
-        homologation: "Modelagem Moderna Esportiva",
-        reinforcedSeams: "Gola e Barra com Reforço",
-        sublimation: "Sublimação Total em Alta Definição"
-      },
-      article: {
-        title: "Estilo, Conforto Térmico e Performance",
-        paragraphs: [
-          "O Cropped Vulkor combina caimento despojado com a tecnologia dos tecidos esportivos respiráveis da marca.",
-          "Ideal para compor uniformes femininos em academias de lutas, cross-training e estúdios de artes marciais."
-        ],
-        bulletPoints: [
-          "Versões disponíveis em Manga Curta e Manga Longa",
-          "Tecido leve, respirável e de secagem rápida",
-          "Caimento confortável que acompanha o movimento do tronco",
-          "Estampas nítidas que não desbotam nem racham"
-        ]
-      },
-      sizeChart: [
-        { size: "PP / 34-36", height: "1,50m a 1,60m", weight: "45kg a 53kg" },
-        { size: "P / 38", height: "1,58m a 1,68m", weight: "54kg a 62kg" },
-        { size: "M / 40", height: "1,65m a 1,74m", weight: "63kg a 72kg" },
-        { size: "G / 42-44", height: "1,70m a 1,80m", weight: "73kg a 85kg" }
-      ],
-      gearHighlights: ["Cropped Manga Curta Striker", "Cropped Manga Longa Combat", "Cropped Personalizado Academia"]
+      gearHighlights: ["Body No-Gi Manga Curta", "Body No-Gi Manga Longa", "Body Anatômico Vulkor", "Body Personalizado Equipe"]
     },
     {
       id: "shorts_fem",
       name: "Shorts Feminino",
       cardTitle: "Shorts Feminino",
       tag: "ALTA MOBILIDADE & CONFORTO",
-      number: "09",
+      number: "06",
       tagline: "Shorts Feminino de Treino — Cós Alto Anatômico sem Transparência",
       description: "Shorts esportivo feminino desenvolvido com ajuste firme e comprimento ideal que não sobe na coxa durante agachamentos, chutes ou corridas. Tecido flexível de alta densidade e secagem rápida.",
       heroImage: "public/shorts_fem_personalizado.jpg",
@@ -395,10 +273,13 @@ const VULKOR_DATA = {
   ],
 
   products: [
-    // RASH GUARDS
+    // ==========================================
+    // MASCULINO
+    // ==========================================
     {
-      id: "prod-rash-01",
+      id: "prod-m-rash-mc-01",
       name: "Rashguard Manga Curta Vulkor No-Gi",
+      audience: "masculino",
       modality: "rashguards",
       modalityLabel: "Rash Guards",
       price: 189.00,
@@ -412,13 +293,14 @@ const VULKOR_DATA = {
       ],
       badge: "MANGA CURTA",
       techBadge: "RESPIRÁVEL + SUBLIMAÇÃO",
-      description: "Rashguard de manga curta em tecido respirável e flexível de alta durabilidade. Costuras reforçadas que não machucam a pele, fita de silicone na barra e sublimação em alta definição com 'SUA PERSONALIZAÇÃO AQUI'.",
+      description: "Rashguard masculina de manga curta em tecido respirável e flexível de alta durabilidade. Costuras reforçadas que não machucam a pele, fita de silicone na barra e sublimação em alta definição com 'SUA PERSONALIZAÇÃO AQUI'.",
       specs: ["Tecido Respirável de Alta Elasticidade", "Proteção Solar UV50+", "Silicone de Ajuste na Cintura", "Sublimação Total em Alta Definição"],
       sizes: ["P", "M", "G", "GG"]
     },
     {
-      id: "prod-rash-02",
+      id: "prod-m-rash-ml-01",
       name: "Rashguard Manga Longa Vulkor Pro Combat",
+      audience: "masculino",
       modality: "rashguards",
       modalityLabel: "Rash Guards",
       price: 209.00,
@@ -432,35 +314,14 @@ const VULKOR_DATA = {
       ],
       badge: "MANGA LONGA",
       techBadge: "COMPRESSÃO ANATÔMICA",
-      description: "Rashguard de manga longa para proteção total dos braços contra atrito de tatame. Confeccionada com costuras reforçadas e estampa sublimada 'SUA PERSONALIZAÇÃO AQUI'.",
+      description: "Rashguard masculina de manga longa para proteção total dos braços contra atrito de tatame. Confeccionada com costuras reforçadas, compressão anatômica e estampa sublimada 'SUA PERSONALIZAÇÃO AQUI'.",
       specs: ["Tecido Respirável e Flexível", "Compressão Anatômica nos Braços", "Proteção Solar UV50+", "Silicone de Ajuste na Barra"],
       sizes: ["P", "M", "G", "GG"]
     },
     {
-      id: "prod-rash-03",
-      name: "Rashguard Personalizada para Equipes & Academias",
-      modality: "rashguards",
-      modalityLabel: "Rash Guards",
-      price: 179.00,
-      oldPrice: 210.00,
-      installments: "3x de R$ 59,66 sem juros",
-      rating: 5.0,
-      reviewsCount: 116,
-      image: "public/rashguard_personalizada.jpg",
-      images: [
-        "public/rashguard_personalizada.jpg"
-      ],
-      badge: "100% PERSONALIZADA",
-      techBadge: "SUBLIMAÇÃO TOTAL",
-      description: "Produzimos rashguards exclusivas para sua equipe, filiais e atletas. Envie sua logo e criamos o layout completo em manga curta ou longa com condições especiais para pedidos de atacado.",
-      specs: ["Sublimação Digital em Alta Resolução", "Manga Curta ou Manga Longa", "Cores Oficiais da sua Equipe", "Pedido Mínimo Sob Consulta no WhatsApp"],
-      sizes: ["P", "M", "G", "GG"]
-    },
-
-    // CAMISETAS
-    {
-      id: "prod-cam-01",
+      id: "prod-m-cam-01",
       name: "Camiseta Vulkor Striker Performance",
+      audience: "masculino",
       modality: "camisetas",
       modalityLabel: "Camisetas",
       price: 139.00,
@@ -474,185 +335,14 @@ const VULKOR_DATA = {
       ],
       badge: "RESPIRÁVEL",
       techBadge: "CONTROLE TÉRMICO",
-      description: "Camiseta técnica em tecido respirável com microcanais de ventilação e estampa frontal 'SUA PERSONALIZAÇÃO AQUI'. Corte anatômico que acompanha os movimentos de treino.",
+      description: "Camiseta masculina técnica em tecido respirável com microcanais de ventilação e estampa frontal 'SUA PERSONALIZAÇÃO AQUI'. Corte anatômico que acompanha os movimentos de treino.",
       specs: ["Tecido Respirável Leve", "Costura Macia e Reforçada", "Secagem Rápida", "Estampa Sublimada de Alta Durabilidade"],
       sizes: ["P", "M", "G", "GG"]
     },
     {
-      id: "prod-cam-02",
-      name: "Camiseta Casual Vulkor Heritage",
-      modality: "camisetas",
-      modalityLabel: "Camisetas",
-      price: 129.00,
-      oldPrice: 150.00,
-      installments: "2x de R$ 64,50 sem juros",
-      rating: 4.9,
-      reviewsCount: 68,
-      image: "public/camiseta_personalizada.jpg",
-      images: [
-        "public/camiseta_personalizada.jpg"
-      ],
-      badge: "CONFORTÁVEL",
-      techBadge: "TOQUE MACIO",
-      description: "Camiseta casual e pós-treino em tecido macio e encorpado com personalização sob medida. Toque suave, gola estruturada e modelagem anatômica que não deforma.",
-      specs: ["Tecido Macio e Confortável", "Sensação Térmica Agradável", "Gola Reforçada", "Estampa Exclusiva Vulkor"],
-      sizes: ["P", "M", "G", "GG"]
-    },
-    {
-      id: "prod-cam-03",
-      name: "Camisetas Personalizadas para Equipes",
-      modality: "camisetas",
-      modalityLabel: "Camisetas",
-      price: 119.00,
-      oldPrice: 140.00,
-      installments: "2x de R$ 59,50 sem juros",
-      rating: 5.0,
-      reviewsCount: 130,
-      image: "public/camiseta_personalizada.jpg",
-      images: [
-        "public/camiseta_personalizada.jpg"
-      ],
-      badge: "PERSONALIZADA",
-      techBadge: "UNIFORMES EQUIPE",
-      description: "Uniformes completos para turmas de artes marciais, instrutores e eventos. Estampas sob medida com a identidade visual da sua escola.",
-      specs: ["Opções para Treino ou Uso Casual", "Sublimação Total de Alta Definição", "Desenvolvimento de Layout Incluso", "Condições Especiais no Atacado"],
-      sizes: ["P", "M", "G", "GG"]
-    },
-
-    // MACAQUINHO
-    {
-      id: "prod-mac-01",
-      name: "Macaquinho Feminino Vulkor Fight & Fitness",
-      modality: "macaquinho",
-      modalityLabel: "Macaquinho",
-      price: 219.00,
-      oldPrice: 259.00,
-      installments: "3x de R$ 73,00 sem juros",
-      rating: 5.0,
-      reviewsCount: 88,
-      image: "public/macaquinho_personalizado.jpg",
-      images: [
-        "public/macaquinho_personalizado.jpg"
-      ],
-      badge: "MACAQUINHO",
-      techBadge: "ZERO TRANSPARÊNCIA",
-      description: "Macaquinho feminino inteiriço com bolso lateral e alta sustentação. Modela o corpo com costuras confortáveis e tecido respirável sem transparência para treinos e lutas.",
-      specs: ["Tecido Flexível de Alta Densidade", "Zero Transparência Comprovada", "Bolso Lateral para Celular", "Costuras Macias Anti-Atrito"],
-      sizes: ["PP", "P", "M", "G"]
-    },
-
-    // BODY
-    {
-      id: "prod-bod-01",
-      name: "Body Feminino Anatômico Vulkor",
-      modality: "body",
-      modalityLabel: "Body",
-      price: 169.00,
-      oldPrice: 199.00,
-      installments: "3x de R$ 56,33 sem juros",
-      rating: 5.0,
-      reviewsCount: 74,
-      image: "public/body_personalizado.jpg",
-      images: [
-        "public/body_personalizado.jpg"
-      ],
-      badge: "BODY FEMININO",
-      techBadge: "ALTA SUSTENTAÇÃO",
-      description: "Body esportivo feminino com ajuste firme e recorte anatômico. Conforto total para treinos intensos, com estampa 'SUA PERSONALIZAÇÃO AQUI'.",
-      specs: ["Tecido Respirável e Flexível", "Sustentação Firme no Busto", "Costuras Reforçadas", "Sublimação em Alta Definição"],
-      sizes: ["PP", "P", "M", "G"]
-    },
-
-    // CROPPED
-    {
-      id: "prod-crp-01",
-      name: "Camiseta Cropped Vulkor Striker",
-      modality: "cropped",
-      modalityLabel: "Cropped",
-      price: 119.00,
-      oldPrice: 140.00,
-      installments: "2x de R$ 59,50 sem juros",
-      rating: 5.0,
-      reviewsCount: 76,
-      image: "public/cropped_personalizado.jpg",
-      images: [
-        "public/cropped_personalizado.jpg"
-      ],
-      badge: "CROPPED FEMININO",
-      techBadge: "LEVE & FLEXÍVEL",
-      description: "Camiseta Cropped feminina com caimento moderno, toque suave e estampa frontal 'SUA PERSONALIZAÇÃO AQUI'. Tecido respirável e flexível, ideal para aquecimento e treinos.",
-      specs: ["Modelagem Cropped Esportiva", "Tecido Respirável e Confortável", "Estampa Sublimada em Alta Resolução", "Gola com Reforço"],
-      sizes: ["PP", "P", "M", "G"]
-    },
-
-    // SHORTS FEMININO
-    {
-      id: "prod-shf-01",
-      name: "Shorts Feminino Anatômico Vulkor Flex",
-      modality: "shorts_fem",
-      modalityLabel: "Shorts Feminino",
-      price: 139.00,
-      oldPrice: 165.00,
-      installments: "2x de R$ 69,50 sem juros",
-      rating: 4.9,
-      reviewsCount: 61,
-      image: "public/shorts_fem_personalizado.jpg",
-      images: [
-        "public/shorts_fem_personalizado.jpg"
-      ],
-      badge: "SHORTS FEMININO",
-      techBadge: "FLEXÍVEL & ANATÔMICO",
-      description: "Shorts feminino de treino com ajuste firme e comprimento ideal que não sobe na coxa. Conforto total para chutes, treinos funcionais e corrida com 'SUA PERSONALIZAÇÃO AQUI'.",
-      specs: ["Tecido Flexível de Alta Mobilidade", "Cós Anatômico Firme", "Secagem Rápida", "Proteção Solar"],
-      sizes: ["PP", "P", "M", "G"]
-    },
-
-    // KIMONOS BJJ
-    {
-      id: "prod-bjj-01",
-      name: "Kimono Vulkor Pro Comp Reforçado",
-      modality: "kimonos",
-      modalityLabel: "Kimonos",
-      price: 649.00,
-      oldPrice: 729.00,
-      installments: "6x de R$ 108,16 sem juros",
-      rating: 5.0,
-      reviewsCount: 84,
-      image: "public/kimono_personalizado.jpg",
-      images: [
-        "public/kimono_personalizado.jpg"
-      ],
-      badge: "BEST SELLER",
-      techBadge: "ALTA DENSIDADE",
-      description: "Kimono de alta densidade para Jiu-Jitsu com corte anatômico e ajuste perfeito sem sobras de pano para dificultar as pegadas adversárias no tatame. Gola emborrachada antimicrobiana e estampa/patch 'SUA PERSONALIZAÇÃO AQUI'.",
-      specs: ["Tecido Reforçado Pré-Encolhido", "Calça com Reforço Duplo", "Gola Emborrachada Antimicrobiana", "Aprovado para Competições Oficiais"],
-      sizes: ["A0", "A1", "A2", "A3", "A4"]
-    },
-    {
-      id: "prod-bjj-02",
-      name: "Kimono Vulkor Light Training",
-      modality: "kimonos",
-      modalityLabel: "Kimonos",
-      price: 489.00,
-      oldPrice: 549.00,
-      installments: "5x de R$ 97,80 sem juros",
-      rating: 4.9,
-      reviewsCount: 65,
-      image: "public/kimono_personalizado.jpg",
-      images: [
-        "public/kimono_personalizado.jpg"
-      ],
-      badge: "LEVE & RESISTENTE",
-      techBadge: "SECAGEM RÁPIDA",
-      description: "Kimono leve projetado para treinos diários e pesagens em competições. Secagem rápida, reforço duplo nas axilas e personalização completa da equipe.",
-      specs: ["Tecido Leve Pré-Encolhido", "Gola Emborrachada", "Calça com Cordão Firme", "Secagem Acelerada"],
-      sizes: ["A0", "A1", "A2", "A3", "A4"]
-    },
-
-    // SHORTS & BERMUDAS
-    {
-      id: "prod-sho-01",
+      id: "prod-m-sho-01",
       name: "Shorts Flex Muay Thai & Striking Vulkor",
+      audience: "masculino",
       modality: "shorts",
       modalityLabel: "Shorts de Combate",
       price: 179.00,
@@ -666,71 +356,269 @@ const VULKOR_DATA = {
       ],
       badge: "MUAY THAI",
       techBadge: "ALTA MOBILIDADE",
-      description: "Shorts profissional para Muay Thai, Kickboxing e Boxe com fenda lateral anatômica, cós confortável e estampa 'SUA PERSONALIZAÇÃO AQUI'. Amplitude total para chutes e joelhadas.",
+      description: "Short masculino para Muay Thai, Kickboxing e No-Gi com fenda lateral anatômica, cós confortável com cordão interno e estampa 'SUA PERSONALIZAÇÃO AQUI'. Amplitude total para chutes e joelhadas.",
       specs: ["Tecido Técnico Leve e Flexível", "Abertura Lateral Anatômica", "Cós Elástico com Cordão Interno", "Sublimação Total de Alta Definição"],
       sizes: ["P (38-40)", "M (42)", "G (44)", "GG (46-48)"]
     },
     {
-      id: "prod-sho-02",
-      name: "Shorts Fighter No-Gi & MMA Reforçado",
-      modality: "shorts",
-      modalityLabel: "Shorts de Combate",
-      price: 189.00,
-      oldPrice: 220.00,
-      installments: "3x de R$ 63,00 sem juros",
-      rating: 5.0,
-      reviewsCount: 124,
-      image: "public/shorts_personalizado.jpg",
-      images: [
-        "public/shorts_personalizado.jpg"
-      ],
-      badge: "MMA & NO-GI",
-      techBadge: "ANTI-RASGO",
-      description: "Short de luta com fendas laterais e painel interno flexível com estampa 'SUA PERSONALIZAÇÃO AQUI'. Não prende chutes altos nem transições no solo.",
-      specs: ["Tecido Reforçado Anti-Rasgo", "Painel de Virilha Flexível", "Cós Firme com Cordão Interno", "Sem Partes Metálicas"],
-      sizes: ["P (38-40)", "M (42)", "G (44)", "GG (46-48)"]
-    },
-
-    // CALÇAS & LEGGINGS / SPATS
-    {
-      id: "prod-cal-01",
-      name: "Calça de Kimono Reforçada BJJ Vulkor",
-      modality: "calcas",
-      modalityLabel: "Calças & Leggings",
-      price: 219.00,
-      oldPrice: 249.00,
-      installments: "3x de R$ 73,00 sem juros",
-      rating: 5.0,
-      reviewsCount: 89,
-      image: "public/calca_personalizada.jpg",
-      images: [
-        "public/calca_personalizada.jpg"
-      ],
-      badge: "REFORÇADA",
-      techBadge: "REFORÇO JOELHO",
-      description: "Calça avulsa de kimono em tecido reforçado com estampa 'SUA PERSONALIZAÇÃO AQUI', proteção acolchoada dupla do joelho à barra e passadores com cordão firme.",
-      specs: ["Tecido Reforçado Anti-Rasgo", "Reforço Duplo nos Joelhos", "Costuras Triplas Reforçadas", "Cordão de Amarração Firme"],
-      sizes: ["A0", "A1", "A2", "A3", "A4"]
-    },
-    {
-      id: "prod-cal-02",
-      name: "Spats Térmico de Compressão Vulkor",
+      id: "prod-m-cal-01",
+      name: "Calça Legging Masculina Vulkor Compressão",
+      audience: "masculino",
       modality: "calcas",
       modalityLabel: "Calças & Leggings",
       price: 169.00,
       oldPrice: 199.00,
       installments: "3x de R$ 56,33 sem juros",
-      rating: 4.8,
-      reviewsCount: 52,
+      rating: 4.9,
+      reviewsCount: 66,
       image: "public/calca_personalizada.jpg",
       images: [
         "public/calca_personalizada.jpg"
       ],
-      badge: "SPATS TÉRMICO",
+      badge: "LEGGING",
       techBadge: "COMPRESSÃO ANATÔMICA",
-      description: "Calça de compressão térmica desenvolvida para homens e mulheres com estampa 'SUA PERSONALIZAÇÃO AQUI'. Evita queimaduras de atrito com o tatame e auxilia na circulação muscular.",
+      description: "Calça legging masculina de compressão em tecido respirável que auxilia na circulação muscular e evita queimaduras de atrito com o tatame. Ajuste anatômico firme que não enrola nem deforma.",
       specs: ["Tecido Respirável de Alta Compressão", "Costuras Macias que não Machucam", "Secagem Rápida", "Proteção Solar"],
       sizes: ["P", "M", "G", "GG"]
+    },
+
+    // ==========================================
+    // FEMININO
+    // ==========================================
+    {
+      id: "prod-f-body-mc-01",
+      name: "Body No-Gi Manga Curta Vulkor",
+      audience: "feminino",
+      modality: "body",
+      modalityLabel: "Body",
+      price: 169.00,
+      oldPrice: 199.00,
+      installments: "3x de R$ 56,33 sem juros",
+      rating: 5.0,
+      reviewsCount: 74,
+      image: "public/body_personalizado.jpg",
+      images: [
+        "public/body_personalizado.jpg"
+      ],
+      badge: "MANGA CURTA",
+      techBadge: "ALTA SUSTENTAÇÃO",
+      description: "Body no-gi feminino de manga curta com ajuste anatômico firme, sustentação reforçada no busto e tecido respirável de secagem rápida. Zero transparência para treinos e lutas.",
+      specs: ["Tecido Respirável e Flexível", "Sustentação Firme no Busto", "Costuras Macias Anti-Atrito", "Sublimação em Alta Definição"],
+      sizes: ["PP", "P", "M", "G"]
+    },
+    {
+      id: "prod-f-body-ml-01",
+      name: "Body No-Gi Manga Longa Vulkor",
+      audience: "feminino",
+      modality: "body",
+      modalityLabel: "Body",
+      price: 189.00,
+      oldPrice: 220.00,
+      installments: "3x de R$ 63,00 sem juros",
+      rating: 4.9,
+      reviewsCount: 58,
+      image: "public/body_personalizado.jpg",
+      images: [
+        "public/body_personalizado.jpg"
+      ],
+      badge: "MANGA LONGA",
+      techBadge: "PROTEÇÃO + SUSTENTAÇÃO",
+      description: "Body no-gi feminino de manga longa que protege os braços do atrito de tatame com sustentação reforçada no busto, costuras macias anti-atrito e sublimação total de alta definição.",
+      specs: ["Proteção dos Braços contra Atrito", "Sustentação Reforçada no Busto", "Tecido Respirável Zero Transparência", "Silicone de Ajuste"],
+      sizes: ["PP", "P", "M", "G"]
+    },
+    {
+      id: "prod-f-bbl-mc-01",
+      name: "Baby Look Manga Curta Vulkor",
+      audience: "feminino",
+      modality: "camisetas",
+      modalityLabel: "Baby Look",
+      price: 119.00,
+      oldPrice: 140.00,
+      installments: "2x de R$ 59,50 sem juros",
+      rating: 5.0,
+      reviewsCount: 76,
+      image: "public/cropped_personalizado.jpg",
+      images: [
+        "public/cropped_personalizado.jpg"
+      ],
+      badge: "MANGA CURTA",
+      techBadge: "LEVE & FLEXÍVEL",
+      description: "Baby look feminina de manga curta com caimento justo e moderno, toque macio e estampa frontal 'SUA PERSONALIZAÇÃO AQUI'. Tecido respirável ideal para aquecimento, treino e uso diário.",
+      specs: ["Modelagem Baby Look Justa", "Tecido Respirável e Confortável", "Estampa Sublimada em Alta Resolução", "Gola com Reforço"],
+      sizes: ["PP", "P", "M", "G"]
+    },
+    {
+      id: "prod-f-bbl-ml-01",
+      name: "Baby Look Manga Longa Vulkor",
+      audience: "feminino",
+      modality: "camisetas",
+      modalityLabel: "Baby Look",
+      price: 139.00,
+      oldPrice: 160.00,
+      installments: "2x de R$ 69,50 sem juros",
+      rating: 4.9,
+      reviewsCount: 64,
+      image: "public/cropped_personalizado.jpg",
+      images: [
+        "public/cropped_personalizado.jpg"
+      ],
+      badge: "MANGA LONGA",
+      techBadge: "TOQUE MACIO",
+      description: "Baby look feminina de manga longa em tecido respirável e flexível, com modelagem justa que valoriza a silhueta e sublimação total que não racha nem desbota.",
+      specs: ["Modelagem Baby Look de Manga Longa", "Tecido Leve de Secagem Rápida", "Costuras Macias Reforçadas", "Sublimação Total em Alta Definição"],
+      sizes: ["PP", "P", "M", "G"]
+    },
+    {
+      id: "prod-f-cam-01",
+      name: "Camiseta Feminina Vulkor Striker",
+      audience: "feminino",
+      modality: "camisetas",
+      modalityLabel: "Camisetas",
+      price: 139.00,
+      oldPrice: 160.00,
+      installments: "2x de R$ 69,50 sem juros",
+      rating: 5.0,
+      reviewsCount: 71,
+      image: "public/camiseta_personalizada.jpg",
+      images: [
+        "public/camiseta_personalizada.jpg"
+      ],
+      badge: "RESPIRÁVEL",
+      techBadge: "CONTROLE TÉRMICO",
+      description: "Camiseta feminina técnica em tecido respirável de alta durabilidade, corte moderno e estampa sublimada 'SUA PERSONALIZAÇÃO AQUI'. Versátil para treino, uniformização de equipes e uso casual.",
+      specs: ["Tecido Respirável Leve", "Modelagem Feminina Confortável", "Secagem Rápida", "Estampa Sublimada de Alta Durabilidade"],
+      sizes: ["PP", "P", "M", "G"]
+    },
+    {
+      id: "prod-f-sho-01",
+      name: "Shorts Feminino Anatômico Vulkor Flex",
+      audience: "feminino",
+      modality: "shorts_fem",
+      modalityLabel: "Shorts Feminino",
+      price: 139.00,
+      oldPrice: 165.00,
+      installments: "2x de R$ 69,50 sem juros",
+      rating: 4.9,
+      reviewsCount: 61,
+      image: "public/shorts_fem_personalizado.jpg",
+      images: [
+        "public/shorts_fem_personalizado.jpg"
+      ],
+      badge: "SHORTS FEMININO",
+      techBadge: "FLEXÍVEL & ANATÔMICO",
+      description: "Short feminino de treino com cós anatômico alto, comprimento ideal que não sobe na coxa e tecido encorpado de alta densidade. Zero transparência em agachamentos, chutes e corridas.",
+      specs: ["Tecido Flexível de Alta Mobilidade", "Cós Anatômico Firme", "Secagem Rápida", "Proteção Solar"],
+      sizes: ["PP", "P", "M", "G"]
+    },
+    {
+      id: "prod-f-cal-01",
+      name: "Calça Legging Feminina Vulkor Alta Sustentação",
+      audience: "feminino",
+      modality: "calcas",
+      modalityLabel: "Calças & Leggings",
+      price: 169.00,
+      oldPrice: 199.00,
+      installments: "3x de R$ 56,33 sem juros",
+      rating: 5.0,
+      reviewsCount: 82,
+      image: "public/calca_personalizada.jpg",
+      images: [
+        "public/calca_personalizada.jpg"
+      ],
+      badge: "LEGGING",
+      techBadge: "ALTA SUSTENTAÇÃO",
+      description: "Calça legging feminina de alta densidade com sustentação superior, zero transparência e cintura que não desaba. Ideal para treinos de luta, funcional e musculação.",
+      specs: ["Tecido de Alta Densidade Zero Transparência", "Alta Sustentação na Cintura", "Costuras Macias Anti-Atrito", "Sublimação Total em Alta Definição"],
+      sizes: ["PP", "P", "M", "G"]
+    },
+
+    // ==========================================
+    // INFANTIL
+    // ==========================================
+    {
+      id: "prod-i-rash-mc-01",
+      name: "Rashguard Infantil Manga Curta Vulkor",
+      audience: "infantil",
+      modality: "rashguards",
+      modalityLabel: "Rash Guards",
+      price: 149.00,
+      oldPrice: 179.00,
+      installments: "2x de R$ 74,50 sem juros",
+      rating: 5.0,
+      reviewsCount: 47,
+      image: "public/rashguard_personalizada.jpg",
+      images: [
+        "public/rashguard_personalizada.jpg"
+      ],
+      badge: "MANGA CURTA",
+      techBadge: "LEVE & RESPIRÁVEL",
+      description: "Rashguard infantil de manga curta em tecido respirável e leve, com costuras macias que não machucam a pele, silicone de ajuste na barra e sublimação total de alta definição.",
+      specs: ["Tecido Respirável e Leve", "Costuras Macias Anti-Atrito", "Proteção Solar UV50+", "Sublimação Total que Não Desbota"],
+      sizes: ["4", "6", "8", "10", "12"]
+    },
+    {
+      id: "prod-i-rash-ml-01",
+      name: "Rashguard Infantil Manga Longa Vulkor",
+      audience: "infantil",
+      modality: "rashguards",
+      modalityLabel: "Rash Guards",
+      price: 169.00,
+      oldPrice: 199.00,
+      installments: "3x de R$ 56,33 sem juros",
+      rating: 4.9,
+      reviewsCount: 39,
+      image: "public/rashguard_personalizada.jpg",
+      images: [
+        "public/rashguard_personalizada.jpg"
+      ],
+      badge: "MANGA LONGA",
+      techBadge: "PROTEÇÃO UV50+",
+      description: "Rashguard infantil de manga longa que protege os braços contra atrito de tatame, com compressão confortável, fita de silicone na barra e estampa sublimada 'SUA PERSONALIZAÇÃO AQUI'.",
+      specs: ["Tecido Respirável e Flexível", "Proteção Solar UV50+", "Silicone de Ajuste na Barra", "Costuras Reforçadas Anti-Atrito"],
+      sizes: ["4", "6", "8", "10", "12"]
+    },
+    {
+      id: "prod-i-cam-01",
+      name: "Camiseta Infantil Vulkor",
+      audience: "infantil",
+      modality: "camisetas",
+      modalityLabel: "Camisetas",
+      price: 99.00,
+      oldPrice: 120.00,
+      installments: "2x de R$ 49,50 sem juros",
+      rating: 5.0,
+      reviewsCount: 53,
+      image: "public/camiseta_personalizada.jpg",
+      images: [
+        "public/camiseta_personalizada.jpg"
+      ],
+      badge: "CONFORTÁVEL",
+      techBadge: "TOQUE MACIO",
+      description: "Camiseta infantil em tecido respirável, macio e resistente, ideal para treinos, uniformização de equipes e uso diário. Estampa sublimada que não racha nem desbota.",
+      specs: ["Tecido Macio e Confortável", "Gola Reforçada com Pesponto Duplo", "Secagem Rápida", "Estampa Sublimada de Alta Durabilidade"],
+      sizes: ["4", "6", "8", "10", "12"]
+    },
+    {
+      id: "prod-i-sho-01",
+      name: "Short Infantil Vulkor Treino & Luta",
+      audience: "infantil",
+      modality: "shorts",
+      modalityLabel: "Shorts de Combate",
+      price: 99.00,
+      oldPrice: 120.00,
+      installments: "2x de R$ 49,50 sem juros",
+      rating: 4.9,
+      reviewsCount: 44,
+      image: "public/shorts_personalizado.jpg",
+      images: [
+        "public/shorts_personalizado.jpg"
+      ],
+      badge: "INFANTIL",
+      techBadge: "ALTA MOBILIDADE",
+      description: "Short infantil para treinos e lutas com cós elástico seguro, abertura lateral para liberdade de movimento, tecido de secagem rápida e sublimação total com estampa da sua equipe.",
+      specs: ["Tecido Leve e Flexível", "Cós Elástico com Cordão Interno", "Sem Partes Metálicas", "Sublimação Total de Alta Definição"],
+      sizes: ["4", "6", "8", "10", "12"]
     }
   ]
 };
