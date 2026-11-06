@@ -5,9 +5,6 @@
 
 class VulkorApp {
   constructor() {
-    this.cart = [];
-    this.currentCoupon = null;
-    this.currentDiscountPercent = 0;
     this.activeModality = null;
     this.currentTestimonialIndex = 0;
     this.totalTestimonials = 4;
@@ -16,9 +13,7 @@ class VulkorApp {
   }
 
   init() {
-    this.loadCartFromStorage();
     this.renderHomeProducts();
-    this.updateCartUI();
     this.initTestimonialsCarousel();
     this.initScrollAnimations();
     this.initCustomCursor();
@@ -262,7 +257,7 @@ class VulkorApp {
   }
 
   // ==========================================
-  // PRODUCT QUICK MODAL
+  // PRODUCT QUICK MODAL (CATÁLOGO: DETALHES + PERSONALIZAÇÃO, SEM COMPRA)
   // ==========================================
   openProductModal(productId) {
     const product = VULKOR_DATA.products.find(p => p.id === productId);
@@ -272,18 +267,33 @@ class VulkorApp {
     const modal = document.getElementById('productModal');
 
     const images = product.images && product.images.length > 0 ? product.images : [product.image];
+    this.activeProduct = product;
+    this.activeProductImageIndex = 0;
+
+    const mainImage = images[this.activeProductImageIndex];
+
+    // Carrossel quando o produto tem múltiplas imagens (ex.: rashguards personalizadas)
+    const imageBox = images.length > 1 ? `
+      <div class="modal-carousel">
+        <button type="button" class="modal-carousel-btn modal-carousel-prev" onclick="app.changeProductImage(-1)" ${this.activeProductImageIndex === 0 ? 'disabled' : ''} aria-label="Ver imagem anterior">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <img src="${mainImage}" alt="${product.name}" id="modalMainProductImg">
+        <button type="button" class="modal-carousel-btn modal-carousel-next" onclick="app.changeProductImage(1)" ${this.activeProductImageIndex >= images.length - 1 ? 'disabled' : ''} aria-label="Ver próxima imagem">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+        <div class="modal-carousel-dots">
+          ${images.map((img, idx) => `
+            <button type="button" class="modal-carousel-dot${idx === 0 ? ' active' : ''}" onclick="app.selectProductImage(${idx})" aria-label="Ver imagem ${idx + 1}"></button>
+          `).join('')}
+        </div>
+      </div>
+    ` : `<img src="${mainImage}" alt="${product.name}" id="modalMainProductImg">`;
 
     modalBody.innerHTML = `
       <div class="modal-product-layout">
         <div class="modal-product-img-box">
-          <img src="${images[0]}" alt="${product.name}" id="modalMainProductImg">
-          ${images.length > 1 ? `
-            <div style="display: flex; gap: 8px; margin-top: 10px; justify-content: center;">
-              ${images.map((img, idx) => `
-                <img src="${img}" style="width: 50px; height: 50px; object-fit: cover; border: 2px solid ${idx === 0 ? 'var(--color-primary)' : 'var(--border-color)'}; cursor: pointer;" onclick="document.getElementById('modalMainProductImg').src='${img}'; this.parentElement.querySelectorAll('img').forEach(i => i.style.borderColor='var(--border-color)'); this.style.borderColor='var(--color-primary)';">
-              `).join('')}
-            </div>
-          ` : ''}
+          ${imageBox}
         </div>
 
         <div class="modal-product-details">
@@ -292,13 +302,6 @@ class VulkorApp {
           
           <h2 class="modal-product-title">${product.name}</h2>
           
-          <div class="modal-price-box">
-            <div class="modal-price-val">
-              R$ ${product.price.toFixed(2).replace('.', ',')}
-            </div>
-            <small class="modal-price-sub">${product.installments} | 5% OFF à vista no PIX</small>
-          </div>
-
           <p class="modal-product-desc">${product.description}</p>
 
           <label>Selecione o Tamanho:</label>
@@ -317,22 +320,43 @@ class VulkorApp {
               ${product.specs.map(sp => `<li>• ${sp}</li>`).join('')}
             </ul>
           </div>
-
-          <div class="modal-actions-row">
-            <button class="btn btn-primary btn-block" onclick="app.addToCart('${product.id}'); app.closeProductModalDirect();">
-              <div class="btn-corner-triangle"></div>
-              <i class="fa-solid fa-cart-shopping" style="margin-right: 6px;"></i> Adicionar ao Arsenal
-            </button>
-            <button class="btn btn-secondary" onclick="app.showModalityDetails('${product.modality}', event); app.closeProductModalDirect();" title="Ver Modalidade">
-              <div class="btn-corner-triangle"></div>
-              Modalidade
-            </button>
-          </div>
         </div>
       </div>
     `;
 
     modal.classList.add('active');
+  }
+
+  changeProductImage(delta) {
+    if (!this.activeProduct) return;
+    const images = this.activeProduct.images && this.activeProduct.images.length > 0 ? this.activeProduct.images : [this.activeProduct.image];
+    const total = images.length;
+    if (total <= 1) return;
+    this.setActiveProductImage((this.activeProductImageIndex + delta + total) % total);
+  }
+
+  selectProductImage(index) {
+    this.setActiveProductImage(index);
+  }
+
+  setActiveProductImage(index) {
+    if (!this.activeProduct) return;
+    const images = this.activeProduct.images && this.activeProduct.images.length > 0 ? this.activeProduct.images : [this.activeProduct.image];
+    const total = images.length;
+    if (index < 0 || index >= total) return;
+
+    this.activeProductImageIndex = index;
+    const mainImg = document.getElementById('modalMainProductImg');
+    if (mainImg) mainImg.src = images[index];
+
+    document.querySelectorAll('#productModal .modal-carousel-dot').forEach((dot, idx) => {
+      dot.classList.toggle('active', idx === index);
+    });
+
+    const prevBtn = document.querySelector('#productModal .modal-carousel-btn.modal-carousel-prev');
+    const nextBtn = document.querySelector('#productModal .modal-carousel-btn.modal-carousel-next');
+    if (prevBtn) prevBtn.disabled = index <= 0;
+    if (nextBtn) nextBtn.disabled = index >= total - 1;
   }
 
   selectSize(btn) {
@@ -355,190 +379,14 @@ class VulkorApp {
   closeProductModalDirect() {
     const modal = document.getElementById('productModal');
     if (modal) modal.classList.remove('active');
+    this.activeProduct = null;
+    this.activeProductImageIndex = 0;
   }
 
   closeAllModals() {
     this.closeProductModalDirect();
-    const cartDrawer = document.getElementById('cartDrawer');
-    if (cartDrawer) cartDrawer.classList.remove('active');
     const searchModal = document.getElementById('searchModal');
     if (searchModal) searchModal.classList.remove('active');
-  }
-
-  // ==========================================
-  // SHOPPING CART (DRAWER)
-  // ==========================================
-  addToCart(productId, quantity = 1) {
-    const product = VULKOR_DATA.products.find(p => p.id === productId);
-    if (!product) return;
-
-    const existing = this.cart.find(i => i.product.id === productId);
-    if (existing) {
-      existing.quantity += quantity;
-    } else {
-      this.cart.push({
-        product: product,
-        quantity: quantity,
-        size: product.sizes[0]
-      });
-    }
-
-    this.saveCartToStorage();
-    this.updateCartUI();
-    this.showToast(`"${product.name}" adicionado ao arsenal.`);
-    this.toggleCart(true);
-  }
-
-  updateQuantity(productId, delta) {
-    const idx = this.cart.findIndex(i => i.product.id === productId);
-    if (idx === -1) return;
-
-    this.cart[idx].quantity += delta;
-    if (this.cart[idx].quantity <= 0) {
-      this.cart.splice(idx, 1);
-    }
-
-    this.saveCartToStorage();
-    this.updateCartUI();
-  }
-
-  removeFromCart(productId) {
-    this.cart = this.cart.filter(i => i.product.id !== productId);
-    this.saveCartToStorage();
-    this.updateCartUI();
-    this.showToast("Item removido.");
-  }
-
-  toggleCart(forceOpen = false) {
-    const drawer = document.getElementById('cartDrawer');
-    if (!drawer) return;
-
-    if (forceOpen) {
-      drawer.classList.add('active');
-    } else {
-      drawer.classList.toggle('active');
-    }
-  }
-
-  applyCoupon() {
-    const input = document.getElementById('couponInput');
-    if (!input) return;
-    const code = input.value.trim().toUpperCase();
-
-    if (code === 'VULKOR10') {
-      this.currentCoupon = 'VULKOR10';
-      this.currentDiscountPercent = 0.10;
-      this.showToast('Cupom VULKOR10 aplicado (-10% OFF)!');
-    } else if (code === 'MESTRE15') {
-      this.currentCoupon = 'MESTRE15';
-      this.currentDiscountPercent = 0.15;
-      this.showToast('Cupom MESTRE15 aplicado (-15% OFF)!');
-    } else if (code === '') {
-      this.showToast('Digite o código do cupom.');
-    } else {
-      this.showToast('Cupom inválido.');
-    }
-
-    this.updateCartUI();
-  }
-
-  updateCartUI() {
-    const badge = document.getElementById('cartBadge');
-    const drawerCount = document.getElementById('drawerCount');
-    const itemsContainer = document.getElementById('cartDrawerItems');
-    const subtotalText = document.getElementById('cartSubtotalText');
-    const totalText = document.getElementById('cartTotalText');
-    const discountLine = document.getElementById('discountLine');
-    const discountText = document.getElementById('cartDiscountText');
-
-    const totalCount = this.cart.reduce((s, i) => s + i.quantity, 0);
-    if (badge) badge.textContent = totalCount;
-    if (drawerCount) drawerCount.textContent = totalCount;
-
-    if (!itemsContainer) return;
-
-    if (this.cart.length === 0) {
-      itemsContainer.innerHTML = `
-        <div style="text-align: center; padding: 40px 10px; color: var(--color-text-muted);">
-          <p style="font-size: 14px; font-weight: 700; color: #000;">SEU ARSENAL ESTÁ VAZIO</p>
-          <p style="font-size: 12px;">Selecione rashguards, camisetas, baby looks, bodies, shorts ou leggings.</p>
-        </div>
-      `;
-      if (subtotalText) subtotalText.textContent = 'R$ 0,00';
-      if (totalText) totalText.textContent = 'R$ 0,00';
-      if (discountLine) discountLine.style.display = 'none';
-      return;
-    }
-
-    itemsContainer.innerHTML = this.cart.map(item => `
-      <div class="cart-drawer-item">
-        <img src="${item.product.image}" alt="${item.product.name}">
-        <div>
-          <h5 style="font-size: 12px; margin-bottom: 2px; text-transform: uppercase;">${item.product.name}</h5>
-          <div style="font-size: 12px; font-weight: 700;">R$ ${(item.product.price * item.quantity).toFixed(2).replace('.', ',')}</div>
-          <div style="display: flex; align-items: center; gap: 6px; margin-top: 6px;">
-            <button class="btn btn-outline btn-sm" style="padding: 2px 6px; font-size: 10px;" onclick="app.updateQuantity('${item.product.id}', -1)">-</button>
-            <span style="font-size: 12px; font-weight: 700;">${item.quantity}</span>
-            <button class="btn btn-outline btn-sm" style="padding: 2px 6px; font-size: 10px;" onclick="app.updateQuantity('${item.product.id}', 1)">+</button>
-            <small style="margin-left: 6px;">Tam: ${item.size}</small>
-          </div>
-        </div>
-        <button class="btn btn-outline btn-sm" style="padding: 4px 8px; border: none;" onclick="app.removeFromCart('${item.product.id}')" title="Excluir">
-          <i class="fa-solid fa-trash-can"></i>
-        </button>
-      </div>
-    `).join('');
-
-    const subtotal = this.cart.reduce((s, i) => s + (i.product.price * i.quantity), 0);
-    const discount = subtotal * this.currentDiscountPercent;
-    const total = subtotal - discount;
-
-    if (subtotalText) subtotalText.textContent = `R$ ${subtotal.toFixed(2).replace('.', ',')}`;
-
-    if (this.currentDiscountPercent > 0 && discountLine && discountText) {
-      discountLine.style.display = 'flex';
-      discountText.textContent = `- R$ ${discount.toFixed(2).replace('.', ',')} (${this.currentDiscountPercent * 100}%)`;
-    } else if (discountLine) {
-      discountLine.style.display = 'none';
-    }
-
-    if (totalText) totalText.textContent = `R$ ${total.toFixed(2).replace('.', ',')}`;
-  }
-
-  checkout() {
-    if (this.cart.length === 0) {
-      this.showToast("Arsenal vazio. Adicione produtos antes de finalizar.");
-      return;
-    }
-
-    const total = document.getElementById('cartTotalText').textContent;
-    alert(`🎉 PEDIDO SIMULADO COM SUCESSO!\n\nArsenal Vulkor reservado.\nTotal: ${total}\nObrigado por treinar com a Vulkor Performance!`);
-    
-    this.cart = [];
-    this.saveCartToStorage();
-    this.updateCartUI();
-    this.toggleCart(false);
-  }
-
-  saveCartToStorage() {
-    try {
-      localStorage.setItem('vulkor_cart', JSON.stringify(this.cart));
-    } catch (e) {}
-  }
-
-  loadCartFromStorage() {
-    try {
-      const saved = localStorage.getItem('vulkor_cart');
-      if (saved) {
-        const stored = JSON.parse(saved);
-        // Descarta do carrinho itens de produtos que não existem mais na base
-        this.cart = Array.isArray(stored)
-          ? stored.filter(i => i && i.product && VULKOR_DATA.products.some(p => p.id === i.product.id))
-          : [];
-      }
-    } catch (e) {
-      this.cart = [];
-    }
   }
 
   // ==========================================

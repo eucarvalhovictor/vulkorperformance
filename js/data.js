@@ -287,9 +287,14 @@ const VULKOR_DATA = {
       installments: "3x de R$ 63,00 sem juros",
       rating: 5.0,
       reviewsCount: 84,
-      image: "public/rashguard_personalizada.jpg",
+      image: "public/rashguard_curto_personalizado.jpg",
       images: [
-        "public/rashguard_personalizada.jpg"
+        "public/rashguard_curto_personalizado.jpg",
+        "public/rash1.jpg",
+        "public/rash2.jpg",
+        "public/rash3.jpg",
+        "public/rash4.jpg",
+        "public/rash5.jpg"
       ],
       badge: "MANGA CURTA",
       techBadge: "RESPIRÁVEL + SUBLIMAÇÃO",
