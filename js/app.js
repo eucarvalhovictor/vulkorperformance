@@ -304,16 +304,6 @@ class VulkorApp {
           
           <p class="modal-product-desc">${product.description}</p>
 
-          <label>Selecione o Tamanho:</label>
-          <div class="modal-size-group" id="modalSizeGroup">
-            ${product.sizes.map((s, idx) => `
-              <button class="btn btn-outline btn-sm ${idx === 0 ? 'btn-primary' : ''}" onclick="app.selectSize(this)">
-                <div class="btn-corner-triangle"></div>
-                ${s}
-              </button>
-            `).join('')}
-          </div>
-
           <div class="modal-specs-box">
             <label>Especificações:</label>
             <ul class="modal-specs-list">
@@ -357,17 +347,6 @@ class VulkorApp {
     const nextBtn = document.querySelector('#productModal .modal-carousel-btn.modal-carousel-next');
     if (prevBtn) prevBtn.disabled = index <= 0;
     if (nextBtn) nextBtn.disabled = index >= total - 1;
-  }
-
-  selectSize(btn) {
-    const parent = document.getElementById('modalSizeGroup');
-    if (!parent) return;
-    parent.querySelectorAll('button').forEach(b => {
-      b.classList.remove('btn-primary');
-      b.classList.add('btn-outline');
-    });
-    btn.classList.remove('btn-outline');
-    btn.classList.add('btn-primary');
   }
 
   closeProductModal(e) {
@@ -443,7 +422,6 @@ class VulkorApp {
             <small>${p.modalityLabel.toUpperCase()}</small>
           </div>
         </div>
-        <div style="font-weight: 700; font-size: 13px;">R$ ${p.price.toFixed(2).replace('.', ',')}</div>
       </div>
     `).join('');
   }

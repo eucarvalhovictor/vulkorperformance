@@ -1893,13 +1893,6 @@ tr:nth-child(even) {
   margin-bottom: 15px;
 }
 
-.modal-size-group {
-  display: flex;
-  gap: 6px;
-  flex-wrap: wrap;
-  margin-bottom: 20px;
-}
-
 .modal-specs-box {
   margin-bottom: 20px;
   border-top: 1px solid var(--border-color);
@@ -1969,39 +1962,54 @@ tr:nth-child(even) {
   cursor: default;
 }
 
-.modal-carousel-btn.prev {
+.modal-carousel-btn.prev,
+.modal-carousel-prev {
   left: 12px;
+  right: auto;
 }
 
-.modal-carousel-btn.next {
+.modal-carousel-btn.next,
+.modal-carousel-next {
+  left: auto;
   right: 12px;
 }
 
 .modal-carousel-dots {
   position: absolute;
-  bottom: 12px;
+  bottom: 14px;
   left: 0;
   right: 0;
-  z-index: 5;
-  display: flex;
-  gap: 8px;
-  justify-content: center;
-  align-items: center;
+  z-index: 6;
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 8px !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 .modal-carousel-dot {
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.4);
-  border: none;
+  display: block !important;
+  flex: 0 0 9px !important;
+  width: 9px !important;
+  min-width: 9px !important;
+  max-width: 9px !important;
+  height: 9px !important;
+  min-height: 9px !important;
+  max-height: 9px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  border-radius: 50% !important;
+  background: rgba(255, 255, 255, 0.45) !important;
   cursor: pointer;
-  padding: 0;
   transition: background 0.2s;
 }
 
 .modal-carousel-dot.active {
-  background: var(--color-primary);
+  background: var(--color-primary) !important;
 }
 
 /* ==========================================================================
